@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+* {
+  font-family: 'Noto Sans';
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.roboto{
+  font-family: 'Roboto';
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.navlink {
+  font-family: 'Roboto';
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.lightHover:hover {
+  background-color: #fcf4ff;
+}
+
+.darkHover:hover {
+  background-color: #2a004a;
+}
+
+.dark .darkTheme {
+  background-color: #1a1a1e;
+}
+
+.dark .whiteText{
+  color: white;
+}
+
+.shadow-black {
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-white {
+  box-shadow: -10px 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.grid-cols-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
