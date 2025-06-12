@@ -106,18 +106,33 @@ function Contact({ isDarkMode }) {
               </div>
               
               <div className='mb-6'>
-                <textarea 
-                  rows='8' 
-                  placeholder='Your message...' 
-                  required 
-                  className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors ${
-                    isDarkMode 
-                      ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500' 
-                      : 'bg-gray-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
-                  }`}
-                  name='Message'
-                ></textarea>
-              </div>
+  {/* Textarea with word limit */}
+  <textarea
+    rows='8'
+    placeholder='Your message ...'
+    maxLength={600} // ~120 words at 5 chars/word
+    className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors resize-none ${
+      isDarkMode
+        ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500'
+        : 'bg-gray-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+    }`}
+    name='Message'
+    onChange={(e) => {
+      const wordCount = e.target.value.trim().split(/\s+/).filter(Boolean).length;
+      // Update counter display
+      document.querySelector('.word-counter').textContent = wordCount;
+      // Enforce soft limit (120 words)
+      if (wordCount >= 120) {
+        e.target.value = e.target.value.split(/\s+/).slice(0,120).join(' ');
+      }
+    }}
+  ></textarea>
+
+  {/* Word counter */}
+  <div className={`text-xs mt-1 text-right ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+    <span className="word-counter">0</span>/120 words
+  </div>
+</div>
 
               {result && (
                 <p className={`mb-4 text-center ${
@@ -129,17 +144,33 @@ function Contact({ isDarkMode }) {
 
               <div className="text-center">
                 <button 
-                  type='submit' 
-                  disabled={isSubmitting}
-                  className={`py-2.5 px-6 inline-flex items-center gap-2 rounded-full text-sm border-2 transition-colors duration-300 ${
-                    isDarkMode 
-                      ? 'bg-transparent border-white text-white hover:border-purple-500 hover:text-purple-400' 
-                      : 'bg-gray-900 border-gray-900 text-white hover:bg-gray-800'
-                  }`}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  {!isSubmitting && <Image src={isDarkMode ? assets.right_arrow_white : assets.right_arrow_white} alt='' className='w-4' />}
-                </button>
+  type='submit' 
+  disabled={isSubmitting}
+  className={`py-2.5 px-6 inline-flex items-center gap-2 rounded-full text-sm border-2 transition-colors duration-300 cursor-pointer ${
+    isDarkMode 
+      ? 'bg-transparent border-white text-white hover:border-purple-500 hover:text-purple-400' 
+      : 'bg-gray-900 border-gray-900 text-white hover:bg-gray-800'
+  }`}
+>
+  {isSubmitting ? 'Sending...' : 'Send Message'}
+  {!isSubmitting && (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="16" 
+      height="16" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      className="w-4"
+    >
+      <path d="M22 2L11 13"></path>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+    </svg>
+  )}
+</button>
               </div>
             </form>
           </div>
