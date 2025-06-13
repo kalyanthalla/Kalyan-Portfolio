@@ -1,18 +1,28 @@
 import { assets, skillsData } from '@/assets/assets'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 function Skills({ isDarkMode }) {
+  const [activeTab, setActiveTab] = useState('all');
+  
+  const categorizedSkills = {
+    all: skillsData,
+    frontend: skillsData.filter(skill => skill.category === 'frontend'),
+    backend: skillsData.filter(skill => skill.category === 'backend'),
+    tools: skillsData.filter(skill => skill.category === 'tools'),
+  };
+
   return (
     <section 
       id="skills" 
       className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
-        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'darkTheme text-neutral-100' : 'bg-white text-neutral-800'
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto'>
+        {/* Mobile: Heading and description at top */}
+        <div className="md:hidden mb-8">
+          <h2 className='text-3xl font-bold mb-4 relative inline-block roboto'>
             <span className="relative z-10">
               My Skills
               <span className={`absolute -bottom-1 left-0 h-1 w-full ${
@@ -20,77 +30,114 @@ function Skills({ isDarkMode }) {
               } rounded-full`}></span>
             </span>
           </h2>
-          <p className={`max-w-2xl mx-auto text-base md:text-lg ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
+          <p className={`text-base ${
+            isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
           }`}>
             Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
           </p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {skillsData.map(({icon, title, description, link}, index) => (
-            <div 
-              key={index} 
-              className={`rounded-xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                isDarkMode 
-                  ? 'bg-neutral-900 border-gray-700 hover:shadow-purple-900/20 hover:border-purple-400/30' 
-                  : 'bg-white border-gray-200 hover:shadow-purple-200/50 hover:border-purple-300'
-              }`}
+        {/* Tabs at top for all screens */}
+        <div className={`flex gap-2 mb-8 ${
+          isDarkMode ? 'text-neutral-300' : 'text-neutral-700'
+        }`}>
+          {['all', 'frontend', 'backend', 'tools'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                activeTab === tab
+                  ? isDarkMode
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-purple-100 text-purple-700'
+                  : isDarkMode
+                    ? 'hover:bg-neutral-700 hover:text-white'
+                    : 'hover:bg-neutral-100 hover:text-neutral-900'
+              } capitalize`}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className={`p-3 rounded-lg ${
-                  isDarkMode ? 'bg-gray-700' : 'bg-gray-100'
-                }`}>
-                  <Image 
-                    src={icon} 
-                    alt={title} 
-                    width={40} 
-                    height={40} 
-                    className="w-8 h-8 object-contain"
-                  />
-                </div>
-                <h3 className={`text-lg font-semibold ${
-                  isDarkMode ? 'text-white' : 'text-gray-900'
-                }`}>{title}</h3>
-              </div>
-              
-              <p className={`text-sm mb-6 ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}>
-                {description}
-              </p>
-              
-              <a 
-                href={link} 
-                className={`inline-flex items-center gap-2 text-sm font-medium ${
-                  isDarkMode ? 'text-purple-300 hover:text-purple-200' : 'text-purple-600 hover:text-purple-700'
-                } transition-colors`}
-              >
-                Learn more
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
-                  stroke={isDarkMode ? "#c4b5fd" : "#7c3aed"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
+              {tab === 'all' ? 'All' : tab === 'frontend' ? 'Front End' : tab === 'backend' ? 'Back End' : tab}
+            </button>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <a 
-            href="#" 
-            className={`inline-flex items-center gap-2 rounded-full py-3 px-6 text-sm font-medium border ${
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Left side - cards */}
+          <div className="md:w-3/4">
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3'>
+              {categorizedSkills[activeTab].map(({icon, title}, index) => (
+                <div 
+                  key={index} 
+                  className={`flex items-center p-3 rounded-md border transition-all duration-150 w-full ${
+                    isDarkMode 
+                      ? 'bg-neutral-900 border-neutral-700 hover:bg-neutral-800' 
+                      : 'bg-white border-neutral-200 hover:bg-neutral-50'
+                  }`}
+                >
+                  <div className={`p-2 rounded-md mr-3 ${
+                    isDarkMode ? 'bg-neutral-700' : 'bg-neutral-100'
+                  }`}>
+                    <Image 
+                      src={icon} 
+                      alt={title} 
+                      width={24} 
+                      height={24} 
+                      className="w-5 h-5 object-contain"
+                    />
+                  </div>
+                  <span className={`text-sm font-medium ${
+                    isDarkMode ? 'text-neutral-200' : 'text-neutral-700'
+                  }`}>{title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Vertical separator with arrow - desktop only */}
+          <div className="hidden md:flex items-center relative">
+            <div className={`h-full w-px ${
+              isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+            }`}></div>
+            <div className={`absolute left-1/2 transform -translate-x-1/2 p-2 rounded-full border ${
               isDarkMode 
-                ? 'border-gray-600 hover:bg-gray-800 text-gray-100 hover:border-purple-400' 
-                : 'border-gray-300 hover:bg-gray-50 text-gray-700 hover:border-purple-500'
-            } transition-all duration-300 hover:shadow-md`}
-          >
-            View all skills
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
-              stroke={isDarkMode ? "#c4b5fd" : "#7c3aed"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+                ? 'bg-neutral-800 border-neutral-600' 
+                : 'bg-white border-neutral-200'
+            } shadow-sm hover:scale-110 transition-transform duration-200 cursor-pointer`}>
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}
+              >
+                <path 
+                  d="M15 18L9 12L15 6" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Right side - heading and description (desktop only) */}
+          <div className="hidden md:block md:w-1/4">
+            <div className="h-full flex flex-col justify-center md:pl-6">
+              <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto'>
+                <span className="relative z-10">
+                  My Skills
+                  <span className={`absolute -bottom-1 left-0 h-1 w-full ${
+                    isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
+                  } rounded-full`}></span>
+                </span>
+              </h2>
+              <p className={`text-base md:text-lg ${
+                isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+              }`}>
+                Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

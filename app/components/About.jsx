@@ -7,7 +7,7 @@ const About = ({ isDarkMode }) => {
     <section 
       id='about' 
       className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
-        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'darkTheme text-neutral-100' : 'bg-white text-neutral-800'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -21,7 +21,7 @@ const About = ({ isDarkMode }) => {
             </span>
           </h2>
           <p className={`text-base md:text-lg max-w-3xl mx-auto lg:mx-0 ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
+            isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
           }`}>
             Get to know more about my journey and skills
           </p>
@@ -51,19 +51,19 @@ const About = ({ isDarkMode }) => {
           <div className='flex-1 order-2 lg:order-1'>
             <div className="space-y-4">
               <p className={`text-base md:text-lg leading-relaxed text-justify ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                isDarkMode ? 'text-neutral-300' : 'text-neutral-700'
               }`}>
                 I'm a passionate full stack web developer with hands-on experience through internships and personal projects. My journey has equipped me with strong skills in the MERN stack and modern web technologies.
               </p>
               
               <p className={`text-base md:text-lg leading-relaxed text-justify ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                isDarkMode ? 'text-neutral-300' : 'text-neutral-700'
               }`}>
                 I specialize in building responsive, accessible web applications that deliver exceptional user experiences, combining technical expertise with creative problem-solving.
               </p>
               
               <div className={`p-4 rounded-lg ${
-                isDarkMode ? 'bg-neutral-800 border border-gray-700' : 'bg-gray-50 border border-gray-200'
+                isDarkMode ? 'bg-neutral-800 border border-neutral-700' : 'bg-neutral-50 border border-neutral-200'
               }`}>
                 <h3 className={`text-lg font-semibold roboto mb-2 ${
                   isDarkMode ? 'text-purple-300' : 'text-purple-600'

@@ -70,7 +70,7 @@ function Contact({ isDarkMode }) {
 
           {/* Vertical Divider - Hidden on mobile */}
           <div className={`hidden lg:block w-px ${
-            isDarkMode ? 'bg-neutral-700' : 'bg-gray-200'
+            isDarkMode ? 'bg-neutral-700' : 'bg-neutral-200'
           }`}></div>
 
           {/* Right Section - Form */}
@@ -85,7 +85,7 @@ function Contact({ isDarkMode }) {
                     className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors ${
                       isDarkMode 
                         ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500' 
-                        : 'bg-gray-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+                        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
                     }`}
                     name='Name'
                   />
@@ -98,7 +98,7 @@ function Contact({ isDarkMode }) {
                     className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors ${
                       isDarkMode 
                         ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500' 
-                        : 'bg-gray-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+                        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
                     }`}
                     name='E-mail'
                   />
@@ -114,7 +114,7 @@ function Contact({ isDarkMode }) {
     className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors resize-none ${
       isDarkMode
         ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500'
-        : 'bg-gray-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
     }`}
     name='Message'
     onChange={(e) => {
@@ -149,7 +149,7 @@ function Contact({ isDarkMode }) {
   className={`py-2.5 px-6 inline-flex items-center gap-2 rounded-full text-sm border-2 transition-colors duration-300 cursor-pointer ${
     isDarkMode 
       ? 'bg-transparent border-white text-white hover:border-purple-500 hover:text-purple-400' 
-      : 'bg-gray-900 border-gray-900 text-white hover:bg-gray-800'
+      : 'bg-neutral-900 border-gray-900 text-white hover:bg-neutral-800'
   }`}
 >
   {isSubmitting ? 'Sending...' : 'Send Message'}

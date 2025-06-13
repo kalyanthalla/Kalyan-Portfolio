@@ -90,7 +90,7 @@ function Header({ isDarkMode }) {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300 ${
+              className={`p-3 rounded-full hover:bg-neutral-200 dark:hover:bg-gray-800 transition-colors duration-300 ${
                 social.name === 'Twitter' ? 'hover:text-blue-400 dark:hover:text-blue-300' :
                 'hover:text-gray-900 dark:hover:text-white'
               }`}

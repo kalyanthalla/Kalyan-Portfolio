@@ -4,6 +4,8 @@ import edu_icon from './edu-icon.png';
 import edu_icon_dark from './edu-icon-dark.png';
 import project_icon from './project-icon.png';
 import project_icon_dark from './project-icon-dark.png';
+import html_icon from './html_icon.svg';
+import node_icon from './node_icon.svg';
 import vscode from './vscode.png';
 import firebase from './firebase.png';
 import figma from './figma.png';
@@ -47,6 +49,8 @@ export const assets = {
     edu_icon_dark,
     project_icon,
     project_icon_dark,
+    html_icon,
+    node_icon,
     vscode,
     firebase,
     figma,
@@ -103,17 +107,15 @@ export const workData = [
 ]
 
 export const skillsData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-]
-
-export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
-];
-
-export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+  {
+    icon: assets.html_icon,
+    title: "HTML5",
+    category: "frontend"
+  },
+  {
+    icon: assets.node_icon,
+    title: "Node.js",
+    category: "backend"
+  },
+  // ... other skills with their categories
 ];
