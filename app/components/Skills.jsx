@@ -22,14 +22,14 @@ function Skills({ isDarkMode }) {
       <div className="max-w-7xl mx-auto">
         {/* Mobile: Heading and description at top */}
         <div className="md:hidden mb-8">
-          <h2 className='text-3xl font-bold mb-4 relative inline-block roboto'>
-            <span className="relative z-10">
-              My Skills
-              <span className={`absolute -bottom-1 left-0 h-1 w-full ${
-                isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
-              } rounded-full`}></span>
-            </span>
-          </h2>
+          <h2 className='text-3xl font-bold mb-4 relative inline-block group'>
+  <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
+    My Skills
+    <span className={`absolute -bottom-1 left-0 h-1 w-full ${
+      isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
+    } rounded-full transition-all duration-300 group-hover:scale-x-110 group-hover:origin-left`}></span>
+  </span>
+</h2>
           <p className={`text-base text-justify ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
@@ -123,14 +123,14 @@ function Skills({ isDarkMode }) {
           {/* Right side - heading and description (desktop only) */}
           <div className="hidden md:block md:w-1/4">
             <div className="h-full flex flex-col justify-center md:pl-6">
-              <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block'>
-                <span className="relative z-10">
-                  My Skills
-                  <span className={`absolute -bottom-1 left-0 h-1 w-full ${
-                    isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
-                  } rounded-full`}></span>
-                </span>
-              </h2>
+              <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block group'>
+  <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
+    My Skills
+    <span className={`absolute -bottom-1 left-0 h-1 w-full ${
+      isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
+    } rounded-full transition-all duration-300 group-hover:scale-x-110 group-hover:origin-left`}></span>
+  </span>
+</h2>
               <p className={`text-base md:text-lg ${
                 isDarkMode ? 'text-gray-300' : 'text-gray-600'
               }`}>
