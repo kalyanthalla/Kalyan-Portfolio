@@ -30,7 +30,7 @@ function Skills({ isDarkMode }) {
               } rounded-full`}></span>
             </span>
           </h2>
-          <p className={`text-base ${
+          <p className={`text-base text-justify ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
@@ -123,7 +123,7 @@ function Skills({ isDarkMode }) {
           {/* Right side - heading and description (desktop only) */}
           <div className="hidden md:block md:w-1/4">
             <div className="h-full flex flex-col justify-center md:pl-6">
-              <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto'>
+              <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block'>
                 <span className="relative z-10">
                   My Skills
                   <span className={`absolute -bottom-1 left-0 h-1 w-full ${

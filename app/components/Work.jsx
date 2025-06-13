@@ -27,20 +27,52 @@ const Work = ({ isDarkMode }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto'>
-            <span className="relative z-10">
-              My Projects
-              <span className={`absolute -bottom-1 left-0 h-1 w-full ${
-                isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
-              } rounded-full`}></span>
-            </span>
-          </h2>
-          <p className={`max-w-2xl mx-auto text-base md:text-lg ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            A collection of projects showcasing my skills, creativity, and growth as a developer.
-          </p>
+        {/* Updated Heading Section */}
+        <div className="flex flex-col md:flex-row items-start mb-16">
+          {/* Left side - heading and paragraph */}
+          <div className="md:w-1/2">
+            <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block'>
+              <span className="relative z-10">
+                My Projects
+                <span className={`absolute -bottom-1 left-0 h-1 w-full ${
+                  isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
+                } rounded-full`}></span>
+              </span>
+            </h2>
+            <p className={`text-base md:text-lg text-justify ${
+              isDarkMode ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              A collection of projects showcasing my skills, creativity, and growth as a developer.
+            </p>
+          </div>
+
+          {/* Vertical separator with downward arrow - desktop only */}
+          <div className="hidden md:flex items-center justify-center relative h-32 w-10 mx-8">
+            <div className={`absolute top-0 bottom-0 w-px ${
+              isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+            }`}></div>
+            <div className={`absolute top-1/2 transform -translate-y-1/2 p-2 rounded-full border ${
+              isDarkMode 
+                ? 'bg-neutral-800 border-neutral-600' 
+                : 'bg-white border-neutral-200'
+            } shadow-sm hover:scale-110 transition-transform duration-200 cursor-pointer`}>
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}
+              >
+                <path 
+                  d="M19 9L12 16L5 9" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
 
         {/* Desktop: 3 Cards */}
