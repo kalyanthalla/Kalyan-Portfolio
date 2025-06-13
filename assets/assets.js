@@ -1,4 +1,3 @@
-import user_image from './user-image.png';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
 import edu_icon from './edu-icon.png';
@@ -19,7 +18,7 @@ import github_icon from './github_icon.svg';
 import github_icon_dark from './github_icon_dark.svg';
 import linkedin_icon from './linkedin_icon.svg'
 import linkedin_icon_dark from './linkedin_icon_dark.svg'
-import profile_img from './profile-img.png';
+import profile_image from './profile_image.png';
 import download_icon from './download_icon.svg';
 import download_icon_dark from './download_icon_dark.svg';
 import moon_icon from './moon_icon.svg';
@@ -42,7 +41,6 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 
 export const assets = {
-    user_image,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -63,7 +61,7 @@ export const assets = {
     github_icon_dark,
     linkedin_icon,
     linkedin_icon_dark,
-    profile_img,
+    profile_image,
     download_icon,
     download_icon_dark,
     moon_icon,

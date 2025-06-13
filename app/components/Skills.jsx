@@ -6,30 +6,36 @@ function Skills({ isDarkMode }) {
   return (
     <section 
       id="skills" 
-      className={`w-full px-[5%] md:px-[12%] py-16 scroll-mt-20 ${
-        isDarkMode ? 'bg-darkTheme text-gray-100' : 'bg-white text-gray-800'
+      className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
+        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h4 className='mb-2 text-lg font-Ovo text-amber-600'>Things I'm Good At ...</h4>
-          <h2 className='text-4xl md:text-5xl font-Ovo font-bold mb-4'>My Skills</h2>
-          <p className={`max-w-2xl mx-auto text-lg ${
+        <div className="text-center mb-16">
+          <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto'>
+            <span className="relative z-10">
+              My Skills
+              <span className={`absolute -bottom-1 left-0 h-1 w-full ${
+                isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
+              } rounded-full`}></span>
+            </span>
+          </h2>
+          <p className={`max-w-2xl mx-auto text-base md:text-lg ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            Here's a glimpse of the technologies and concepts I've worked with while building real-world projects.
+            Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
           </p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {skillsData.map(({icon, title, description, link}, index) => (
             <div 
               key={index} 
-              className={`rounded-xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer ${
+              className={`rounded-xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
                 isDarkMode 
-                  ? 'bg-gray-800 border-gray-700 hover:shadow-gray-800/50' 
-                  : 'bg-white border-gray-200 hover:shadow-gray-200'
-              } border`}
+                  ? 'bg-neutral-900 border-gray-700 hover:shadow-purple-900/20 hover:border-purple-400/30' 
+                  : 'bg-white border-gray-200 hover:shadow-purple-200/50 hover:border-purple-300'
+              }`}
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className={`p-3 rounded-lg ${
@@ -43,7 +49,7 @@ function Skills({ isDarkMode }) {
                     className="w-8 h-8 object-contain"
                   />
                 </div>
-                <h3 className={`text-xl font-medium ${
+                <h3 className={`text-lg font-semibold ${
                   isDarkMode ? 'text-white' : 'text-gray-900'
                 }`}>{title}</h3>
               </div>
@@ -56,38 +62,34 @@ function Skills({ isDarkMode }) {
               
               <a 
                 href={link} 
-                className={`inline-flex items-center gap-2 text-sm ${
-                  isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-amber-600 hover:text-amber-700'
+                className={`inline-flex items-center gap-2 text-sm font-medium ${
+                  isDarkMode ? 'text-purple-300 hover:text-purple-200' : 'text-purple-600 hover:text-purple-700'
                 } transition-colors`}
               >
-                Read more 
-                <Image 
-                  src={isDarkMode ? assets.right_arrow_white : assets.right_arrow} 
-                  alt="Right arrow" 
-                  width={16}
-                  height={16}
-                />
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                  stroke={isDarkMode ? "#c4b5fd" : "#7c3aed"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
               </a>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <a 
             href="#" 
-            className={`inline-flex items-center gap-2 rounded-full py-3 px-8 border ${
+            className={`inline-flex items-center gap-2 rounded-full py-3 px-6 text-sm font-medium border ${
               isDarkMode 
-                ? 'border-gray-600 hover:bg-gray-800 text-gray-100 hover:border-amber-500' 
-                : 'border-gray-300 hover:bg-gray-100 text-gray-700 hover:border-amber-500'
-            } transition-all duration-300`}
+                ? 'border-gray-600 hover:bg-gray-800 text-gray-100 hover:border-purple-400' 
+                : 'border-gray-300 hover:bg-gray-50 text-gray-700 hover:border-purple-500'
+            } transition-all duration-300 hover:shadow-md`}
           >
-            Show more 
-            <Image 
-              src={isDarkMode ? assets.right_arrow_white : assets.right_arrow_bold} 
-              alt="Right arrow" 
-              width={16}
-              height={16}
-            />
+            View all skills
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+              stroke={isDarkMode ? "#c4b5fd" : "#7c3aed"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </a>
         </div>
       </div>
