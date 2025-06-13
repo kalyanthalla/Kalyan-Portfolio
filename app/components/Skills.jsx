@@ -16,7 +16,7 @@ function Skills({ isDarkMode }) {
     <section 
       id="skills" 
       className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
-        isDarkMode ? 'darkTheme text-neutral-100' : 'bg-white text-neutral-800'
+        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -31,7 +31,7 @@ function Skills({ isDarkMode }) {
             </span>
           </h2>
           <p className={`text-base ${
-            isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+            isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
           </p>
@@ -39,7 +39,7 @@ function Skills({ isDarkMode }) {
 
         {/* Tabs at top for all screens */}
         <div className={`flex gap-2 mb-8 ${
-          isDarkMode ? 'text-neutral-300' : 'text-neutral-700'
+          isDarkMode ? 'text-gray-300' : 'text-gray-700'
         }`}>
           {['all', 'frontend', 'backend', 'tools'].map((tab) => (
             <button
@@ -52,7 +52,7 @@ function Skills({ isDarkMode }) {
                     : 'bg-purple-100 text-purple-700'
                   : isDarkMode
                     ? 'hover:bg-neutral-700 hover:text-white'
-                    : 'hover:bg-neutral-100 hover:text-neutral-900'
+                    : 'hover:bg-neutral-100 hover:text-gray-900'
               } capitalize`}
             >
               {tab === 'all' ? 'All' : tab === 'frontend' ? 'Front End' : tab === 'backend' ? 'Back End' : tab}
@@ -85,7 +85,7 @@ function Skills({ isDarkMode }) {
                     />
                   </div>
                   <span className={`text-sm font-medium ${
-                    isDarkMode ? 'text-neutral-200' : 'text-neutral-700'
+                    isDarkMode ? 'text-gray-200' : 'text-gray-700'
                   }`}>{title}</span>
                 </div>
               ))}
@@ -132,7 +132,7 @@ function Skills({ isDarkMode }) {
                 </span>
               </h2>
               <p className={`text-base md:text-lg ${
-                isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
               </p>

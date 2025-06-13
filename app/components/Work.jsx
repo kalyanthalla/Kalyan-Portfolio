@@ -23,7 +23,7 @@ const Work = ({ isDarkMode }) => {
     <section 
       id="work" 
       className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
-        isDarkMode ? 'darkTheme text-neutral-100' : 'bg-white text-neutral-800'
+        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -37,7 +37,7 @@ const Work = ({ isDarkMode }) => {
             </span>
           </h2>
           <p className={`max-w-2xl mx-auto text-base md:text-lg ${
-            isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+            isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             A collection of projects showcasing my skills, creativity, and growth as a developer.
           </p>
@@ -73,7 +73,7 @@ const Work = ({ isDarkMode }) => {
               } ${index === 1 ? 'scale-105 z-10' : 'scale-95 opacity-90'}`}>
                 <div className="p-4">
                   <h3 className={`text-xl font-bold mb-2 ${
-                    isDarkMode ? 'text-white' : 'text-neutral-900'
+                    isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}>
                     {project.title}
                   </h3>
@@ -91,7 +91,7 @@ const Work = ({ isDarkMode }) => {
                 
                 <div className="p-4">
                   <p className={`mb-4 ${
-                    isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+                    isDarkMode ? 'text-gray-300' : 'text-gray-600'
                   }`}>
                     {project.description}
                   </p>
@@ -122,7 +122,7 @@ const Work = ({ isDarkMode }) => {
                         className={`p-2 rounded-full ${
                           isDarkMode 
                             ? 'bg-neutral-700 hover:bg-neutral-600 text-white' 
-                            : 'bg-neutral-200 hover:bg-neutral-300 text-neutral-800'
+                            : 'bg-neutral-200 hover:bg-neutral-300 text-gray-800'
                         } transition-colors`}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ const Work = ({ isDarkMode }) => {
           }`}>
             <div className="p-4">
               <h3 className={`text-xl font-bold mb-2 ${
-                isDarkMode ? 'text-white' : 'text-neutral-900'
+                isDarkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 {currentProject.title}
               </h3>
@@ -178,7 +178,7 @@ const Work = ({ isDarkMode }) => {
             
             <div className="p-4">
               <p className={`mb-4 ${
-                isDarkMode ? 'text-neutral-300' : 'text-neutral-600'
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 {currentProject.description}
               </p>
@@ -209,7 +209,7 @@ const Work = ({ isDarkMode }) => {
                     className={`p-2 rounded-full ${
                       isDarkMode 
                         ? 'bg-neutral-700 hover:bg-neutral-600 text-white' 
-                        : 'bg-neutral-200 hover:bg-neutral-300 text-neutral-800'
+                        : 'bg-neutral-200 hover:bg-neutral-300 text-gray-800'
                     } transition-colors`}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
