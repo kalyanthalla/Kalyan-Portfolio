@@ -65,7 +65,7 @@ const About = ({ isDarkMode }) => {
               <div className={`p-4 rounded-lg ${
                 isDarkMode ? 'bg-neutral-800 border border-neutral-700' : 'bg-neutral-50 border border-neutral-200'
               }`}>
-                <h3 className={`text-base font-semibold roboto mb-2 ${
+                <h3 className={`text-base font-semibold mb-2 ${
                   isDarkMode ? 'text-purple-400' : 'text-purple-500'
                 }`}>
                   What drives me:
