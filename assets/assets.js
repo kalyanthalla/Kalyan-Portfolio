@@ -20,7 +20,7 @@ import github_icon from './github_icon.svg';
 import github_icon_dark from './github_icon_dark.svg';
 import linkedin_icon from './linkedin_icon.svg'
 import linkedin_icon_dark from './linkedin_icon_dark.svg'
-import profile_image from './profile_image.png';
+import profile_image from './profile_image.jpeg';
 import download_icon from './download_icon.svg';
 import download_icon_dark from './download_icon_dark.svg';
 import moon_icon from './moon_icon.svg';
