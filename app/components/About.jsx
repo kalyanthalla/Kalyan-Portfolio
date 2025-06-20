@@ -67,7 +67,7 @@ const About = ({ isDarkMode }) => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 text-center lg:text-left">
-          <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block roboto group'>
+          <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block group roboto'>
             <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
               About Me
               <span className={`absolute -bottom-1 left-0 h-1 w-full ${

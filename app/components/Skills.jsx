@@ -23,7 +23,7 @@ function Skills({ isDarkMode }) {
       <div className="max-w-7xl mx-auto relative">
         {/* Mobile: Heading and description at top */}
         <div className="md:hidden mb-8">
-          <h2 className='text-3xl font-bold mb-4 relative inline-block group'>
+          <h2 className='text-3xl font-bold mb-4 relative inline-block group roboto'>
             <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
               My Skills
               <span className={`absolute -bottom-1 left-0 h-1 w-full ${
@@ -126,7 +126,7 @@ function Skills({ isDarkMode }) {
 
               {/* Heading and description */}
               <div className="h-full flex flex-col justify-center pl-6 ml-4">
-                <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block group'>
+                <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block group roboto'>
                   <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
                     My Skills
                   <span className={`absolute -bottom-1 left-0 h-1 w-full ${
