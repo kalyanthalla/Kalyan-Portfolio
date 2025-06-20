@@ -9,6 +9,7 @@ function Skills({ isDarkMode }) {
     all: skillsData,
     frontend: skillsData.filter(skill => skill.category === 'frontend'),
     backend: skillsData.filter(skill => skill.category === 'backend'),
+    database: skillsData.filter(skill => skill.category === 'database'),
     tools: skillsData.filter(skill => skill.category === 'tools'),
   };
 
@@ -41,7 +42,7 @@ function Skills({ isDarkMode }) {
         <div className={`flex gap-2 mb-8 ${
           isDarkMode ? 'text-gray-300' : 'text-gray-700'
         }`}>
-          {['all', 'frontend', 'backend', 'tools'].map((tab) => (
+          {['all', 'frontend', 'backend', 'database','tools'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
