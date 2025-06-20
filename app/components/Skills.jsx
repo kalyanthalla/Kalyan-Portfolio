@@ -16,76 +16,87 @@ function Skills({ isDarkMode }) {
   return (
     <section 
       id="skills" 
-      className={`w-full px-[5%] md:px-[12%] py-16 md:py-20 scroll-mt-20 transition-colors duration-300 ${
+      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
-      <div className="max-w-7xl mx-auto relative">
-        {/* Mobile: Heading and description at top */}
-        <div className="md:hidden mb-8">
-          <h2 className='text-3xl font-bold mb-4 relative inline-block group roboto'>
-            <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
+      {/* Animated background elements */}
+      <div className='absolute inset-0 overflow-hidden -z-10'>
+        <div className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full ${
+          isDarkMode ? 'bg-purple-500/10' : 'bg-purple-300/20'
+        } blur-3xl animate-float`}></div>
+        <div className={`absolute top-2/3 right-1/3 w-80 h-80 rounded-full ${
+          isDarkMode ? 'bg-blue-500/10' : 'bg-blue-300/20'
+        } blur-3xl animate-float-delay`}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        {/* Mobile heading */}
+        <div className="md:hidden mb-8 text-center">
+          <h2 className='text-3xl font-bold mb-3 relative inline-block'>
+            <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
+              isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
+            } bg-clip-text text-transparent`}>
               My Skills
-              <span className={`absolute -bottom-1 left-0 h-1 w-full ${
-                isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
-              } rounded-full transition-all duration-300 group-hover:scale-x-110 group-hover:origin-left`}></span>
             </span>
           </h2>
-          <p className={`text-base text-justify ${
+          <p className={`text-base ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
+            Here's a glimpse of the technologies I've mastered
           </p>
         </div>
 
-        {/* Tabs at top for all screens */}
-        <div className={`flex flex-wrap gap-2 mb-8 ${
+        {/* Tabs - enhanced styling */}
+        <div className={`flex flex-wrap gap-2 mb-8 justify-center md:justify-start ${
           isDarkMode ? 'text-gray-300' : 'text-gray-700'
         }`}>
-          {['all', 'frontend', 'backend', 'database','tools'].map((tab) => (
+          {['all', 'frontend', 'backend', 'database', 'tools'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex-shrink-0 ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex-shrink-0 ${
                 activeTab === tab
                   ? isDarkMode
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-purple-100 text-purple-700'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-purple-100 text-purple-700 shadow-md'
                   : isDarkMode
                     ? 'hover:bg-neutral-700 hover:text-white'
                     : 'hover:bg-neutral-100 hover:text-gray-900'
-              } capitalize`}
+              } capitalize border ${
+                isDarkMode ? 'border-neutral-700' : 'border-neutral-200'
+              }`}
             >
               {tab === 'all' ? 'All' : tab === 'frontend' ? 'Frontend' : tab === 'backend' ? 'Backend' : tab}
             </button>
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6">
-          {/* Left side - cards */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Skills cards - enhanced */}
           <div className="md:w-3/4">
-            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
               {categorizedSkills[activeTab].map(({icon, title}, index) => (
                 <div 
                   key={index} 
-                  className={`flex items-center p-3 rounded-md border transition-all duration-150 w-full ${
+                  className={`flex flex-col items-center p-4 rounded-xl border transition-all duration-300 w-full group ${
                     isDarkMode 
-                      ? 'bg-neutral-900 border-neutral-700 hover:bg-neutral-800' 
-                      : 'bg-white border-neutral-200 hover:bg-neutral-50'
-                  }`}
+                      ? 'bg-neutral-900/50 border-neutral-700 hover:bg-neutral-800 hover:shadow-lg' 
+                      : 'bg-white/80 border-neutral-200 hover:bg-white hover:shadow-md'
+                  } hover:-translate-y-1`}
                 >
-                  <div className={`p-2 rounded-md mr-3 ${
-                    isDarkMode ? 'bg-neutral-700' : 'bg-neutral-100'
-                  }`}>
+                  <div className={`p-3 rounded-lg mb-3 ${
+                    isDarkMode ? 'bg-neutral-800' : 'bg-neutral-100'
+                  } group-hover:scale-110 transition-transform duration-300`}>
                     <Image 
                       src={icon} 
                       alt={title} 
                       width={24} 
                       height={24} 
-                      className="w-5 h-5 object-contain"
+                      className="w-6 h-6 object-contain"
                     />
                   </div>
-                  <span className={`text-sm font-medium ${
+                  <span className={`text-sm font-medium text-center ${
                     isDarkMode ? 'text-gray-200' : 'text-gray-700'
                   }`}>{title}</span>
                 </div>
@@ -93,25 +104,25 @@ function Skills({ isDarkMode }) {
             </div>
           </div>
 
-          {/* Right side - fixed position relative to container */}
-          <div className="hidden md:block md:w-1/4">
-            <div className="sticky top-20 h-[calc(100vh-200px)] flex">
-              {/* Vertical separator with arrow */}
+          {/* Right side - enhanced */}
+          <div className="hidden md:flex md:w-1/4">
+            <div className="sticky top-20 h-[calc(100vh-200px)] flex items-center">
+              {/* Vertical separator with animated arrow */}
               <div className="relative h-full flex items-center">
-                <div className={`absolute left-0 top-0 h-full w-px ${
-                  isDarkMode ? 'bg-neutral-700' : 'bg-neutral-300'
+                <div className={`absolute left-0 top-0 h-full w-0.5 ${
+                  isDarkMode ? 'bg-gradient-to-b from-purple-500/30 to-blue-500/30' : 'bg-gradient-to-b from-purple-300/50 to-blue-300/50'
                 }`}></div>
                 <div className={`absolute left-0 top-1/2 transform -translate-x-1/2 p-2 rounded-full border ${
                   isDarkMode 
-                    ? 'bg-neutral-800 border-neutral-600' 
-                    : 'bg-white border-neutral-200'
-                } shadow-sm hover:scale-110 transition-transform duration-200 cursor-pointer`}>
+                    ? 'bg-neutral-800 border-purple-500/50' 
+                    : 'bg-white border-purple-300'
+                } shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-110`}>
                   <svg 
                     width="20" 
                     height="20" 
                     viewBox="0 0 24 24" 
                     fill="none" 
-                    className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}
+                    className={`${isDarkMode ? 'text-purple-400' : 'text-purple-600'} animate-pulse`}
                   >
                     <path 
                       d="M15 18L9 12L15 6" 
@@ -125,16 +136,15 @@ function Skills({ isDarkMode }) {
               </div>
 
               {/* Heading and description */}
-              <div className="h-full flex flex-col justify-center pl-6 ml-4">
-                <h2 className='text-3xl md:text-4xl font-bold mb-4 relative inline-block group roboto'>
-                  <span className="relative z-10 transition-all duration-200 group-hover:scale-x-[1.03] group-hover:origin-left">
+              <div className="h-full flex flex-col justify-center pl-8 ml-4">
+                <h2 className='text-3xl font-bold mb-4 relative inline-block'>
+                  <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
+                    isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
+                  } bg-clip-text text-transparent`}>
                     My Skills
-                  <span className={`absolute -bottom-1 left-0 h-1 w-full ${
-                    isDarkMode ? 'bg-purple-400' : 'bg-purple-600'
-                    } rounded-full transition-all duration-300 group-hover:scale-x-110 group-hover:origin-left`}></span>
                   </span>
                 </h2>
-                <p className={`text-base md:text-lg ${
+                <p className={`text-base ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>
                   Here's a glimpse of the technologies and concepts I've mastered through real-world projects.
@@ -144,6 +154,19 @@ function Skills({ isDarkMode }) {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float 8s ease-in-out infinite 2s;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          50% { transform: translateY(-20px) translateX(20px); }
+        }
+      `}</style>
     </section>
   )
 }

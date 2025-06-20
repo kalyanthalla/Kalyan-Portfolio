@@ -23,6 +23,7 @@ function Contact({ isDarkMode }) {
       if (data.success) {
         setResult("Message sent successfully!");
         event.target.reset();
+        document.querySelector('.word-counter').textContent = '0';
       } else {
         setResult(data.message || "Failed to send message. Please try again.");
       }
@@ -38,21 +39,37 @@ function Contact({ isDarkMode }) {
   return (
     <section 
       id="contact" 
-      className={`w-full px-[5%] md:px-[12%] py-16 scroll-mt-20 ${
-        isDarkMode ? 'bg-darkTheme' : 'bg-white'
+      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-[calc(100vh-80px)] flex items-end scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+        isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
-          isDarkMode ? 'bg-neutral-900/50 border border-neutral-800' : 'bg-white border border-gray-200 shadow-lg'
-        }`}>
+      {/* Animated background elements */}
+      <div className='absolute inset-0 overflow-hidden -z-10'>
+        <div className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full ${
+          isDarkMode ? 'bg-purple-500/10' : 'bg-purple-300/20'
+        } blur-3xl animate-float`}></div>
+        <div className={`absolute top-2/3 right-1/3 w-80 h-80 rounded-full ${
+          isDarkMode ? 'bg-blue-500/10' : 'bg-blue-300/20'
+        } blur-3xl animate-float-delay`}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className={`flex flex-col lg:flex-row rounded-2xl overflow-hidden ${
+          isDarkMode ? 'bg-neutral-900/50 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
+        } shadow-xl`}>
           {/* Left Section - Headings */}
           <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
-            <h4 className='mb-2 text-base font-bold text-purple-500'>Let's Connect ...</h4>
-            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
-              isDarkMode ? 'text-white' : 'text-gray-800'
+            <h4 className={`mb-3 text-base font-semibold ${
+              isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
-              Get in Touch
+              Let's Connect ...
+            </h4>
+            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>
+              Get in <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
+                isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
+              } bg-clip-text text-transparent`}>Touch</span>
             </h2>
             <p className={`text-base ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
@@ -60,9 +77,19 @@ function Contact({ isDarkMode }) {
               Have a question, idea, or just want to say Hi! I'm always open to new opportunities and tech conversations.
             </p>
             
-            {/* Optional: Add social icons or additional info here */}
-            <div className="mt-6 flex space-x-4">
-              {/* Add your social media icons here */}
+            {/* Contact Info */}
+            <div className="mt-8 space-y-3">
+              <div className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 mr-3 ${
+                  isDarkMode ? 'text-purple-400' : 'text-purple-600'
+                }`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span className={`text-sm ${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                }`}>thallasaikalyan@gmail.com</span>
+              </div>
             </div>
           </div>
 
@@ -76,64 +103,75 @@ function Contact({ isDarkMode }) {
             <form onSubmit={onSubmit}>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-6'>
                 <div>
+                  <label className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>Name</label>
                   <input 
                     type='text' 
                     placeholder='Your name' 
                     required 
-                    className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors ${
+                    className={`w-full p-3 text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500' 
-                        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+                        ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
+                        : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='Name'
                   />
                 </div>
                 <div>
+                  <label className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>Email</label>
                   <input 
                     type='email' 
                     placeholder='Your email' 
                     required 
-                    className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors ${
+                    className={`w-full p-3 text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500' 
-                        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
+                        ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
+                        : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='E-mail'
                   />
                 </div>
               </div>
               
-              <div className='mb-6'>
-                {/* Textarea with word limit */}
+              <div className='mb-4'>
+                <label className={`block text-sm font-medium mb-1 ${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}>Message</label>
                 <textarea
-                        rows='8'
-                        placeholder='Your message ...'
-                        maxLength={600} // ~120 words at 5 chars/word
-                        className={`w-full p-3 text-sm outline-none border-2 rounded-lg transition-colors resize-none ${
-                        isDarkMode
-                        ? 'bg-neutral-800/50 border-white/50 text-white focus:border-purple-500 hover:border-purple-500'
-                        : 'bg-neutral-50 border-purple-500/30 text-gray-800 focus:border-purple-500'
-                      }`}
-                      name='Message'
-                      onChange={(e) => {
-                      const wordCount = e.target.value.trim().split(/\s+/).filter(Boolean).length;
-                      // Update counter display
-                      document.querySelector('.word-counter').textContent = wordCount;
-                      // Enforce soft limit (120 words)
-                      if (wordCount >= 120) {
+                  rows='6'
+                  placeholder='Your message ...'
+                  maxLength={600}
+                  className={`w-full p-3 text-sm outline-none border rounded-lg transition-all resize-none ${
+                    isDarkMode
+                      ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500'
+                      : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
+                  }`}
+                  name='Message'
+                  onChange={(e) => {
+                    const wordCount = e.target.value.trim().split(/\s+/).filter(Boolean).length;
+                    document.querySelector('.word-counter').textContent = wordCount;
+                    if (wordCount >= 120) {
                       e.target.value = e.target.value.split(/\s+/).slice(0,120).join(' ');
                     }
                   }}
-                  ></textarea>
-
-                  {/* Word counter */}
-                  <div className={`text-xs mt-1 text-right ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                    <span className="word-counter">0</span>/120 words
-                  </div>
+                ></textarea>
+                <div className={`text-xs mt-1 text-right ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                }`}>
+                  <span className="word-counter">0</span>/120 words
                 </div>
-                {result && (
-                <p className={`mb-4 text-center ${
-                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+              </div>
+              
+              {result && (
+                <p className={`mb-4 text-center text-sm ${
+                  result.includes("success") 
+                    ? 'text-green-500' 
+                    : isDarkMode 
+                      ? 'text-red-400' 
+                      : 'text-red-500'
                 }`}>
                   {result}
                 </p>
@@ -141,31 +179,30 @@ function Contact({ isDarkMode }) {
 
               <div className="text-center">
                 <button 
-                    type='submit' 
-                    disabled={isSubmitting}
-                    className={`py-2.5 px-6 inline-flex items-center gap-2 rounded-full text-sm border-2 transition-colors duration-300 cursor-pointer ${
+                  type='submit' 
+                  disabled={isSubmitting}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
                     isDarkMode 
-                    ? 'bg-transparent border-white text-white hover:border-purple-500 hover:text-purple-400' 
-                    : 'bg-neutral-900 border-gray-900 text-white hover:bg-neutral-800'
-                  }`}
-                  >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  {!isSubmitting && (
-                    <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="w-4"
-                    >
-                    <path d="M22 2L11 13"></path>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
+                      ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-lg hover:shadow-purple-500/30' 
+                      : 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-purple-600/30'
+                  } ${isSubmitting ? 'opacity-80' : ''}`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 2L11 13"></path>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                    </>
                   )}
                 </button>
               </div>
@@ -173,6 +210,19 @@ function Contact({ isDarkMode }) {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float 8s ease-in-out infinite 2s;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          50% { transform: translateY(-20px) translateX(20px); }
+        }
+      `}</style>
     </section>
   )
 }
