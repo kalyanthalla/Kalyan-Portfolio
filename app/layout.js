@@ -6,7 +6,7 @@ const noto_sans = Noto_Sans({
 });
 
 const roboto = Roboto({
-  subsets: ["latin"], weight: ["400"]
+  subsets: ["latin"], weight: ["400", "500", "600", "700"]
 });
 
 export const metadata = {

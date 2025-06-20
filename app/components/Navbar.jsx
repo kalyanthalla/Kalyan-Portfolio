@@ -55,7 +55,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
-                                    className={`navlink relative text-lg font-black ${
+                                    className={`navlink relative text-lg font-medium ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
