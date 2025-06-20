@@ -46,7 +46,7 @@ function Skills({ isDarkMode }) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+              className={`px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                 activeTab === tab
                   ? isDarkMode
                     ? 'bg-purple-600 text-white'
@@ -56,7 +56,7 @@ function Skills({ isDarkMode }) {
                     : 'hover:bg-neutral-100 hover:text-gray-900'
               } capitalize`}
             >
-              {tab === 'all' ? 'All' : tab === 'frontend' ? 'Front End' : tab === 'backend' ? 'Back End' : tab}
+              {tab === 'all' ? 'All' : tab === 'frontend' ? 'Frontend' : tab === 'backend' ? 'Backend' : tab}
             </button>
           ))}
         </div>
