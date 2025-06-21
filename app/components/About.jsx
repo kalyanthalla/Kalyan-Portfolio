@@ -6,7 +6,7 @@ const About = ({ isDarkMode }) => {
   return (
     <section 
       id='about' 
-      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 sm:px-6 lg:px-8 pt-24 md:pt-16 pb-16 md:py-20 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
@@ -60,7 +60,7 @@ const About = ({ isDarkMode }) => {
             {/* Text Content - adjusted spacing */}
             <div className='flex-1 order-2 lg:order-1'>
               <div className="space-y-6">
-                <p className={`text-base leading-relaxed ${
+                <p className={`text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
                   I'm a passionate <span className={`font-medium ${
@@ -68,7 +68,7 @@ const About = ({ isDarkMode }) => {
                   }`}>full stack web developer</span> with hands-on experience through internships and personal projects. My journey has equipped me with strong skills in the MERN stack and modern web technologies.
                 </p>
                 
-                <p className={`text-base leading-relaxed ${
+                <p className={`text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
                   I specialize in building <span className={`font-medium ${

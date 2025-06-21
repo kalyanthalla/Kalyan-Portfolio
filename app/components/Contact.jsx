@@ -39,7 +39,7 @@ function Contact({ isDarkMode }) {
   return (
     <section 
       id="contact" 
-      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-[calc(100vh-80px)] flex items-end scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-[calc(100vh-80px)] flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
@@ -53,32 +53,32 @@ function Contact({ isDarkMode }) {
         } blur-3xl animate-float-delay`}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className={`flex flex-col lg:flex-row rounded-2xl overflow-hidden ${
+      <div className="max-w-6xl mx-auto w-full relative z-10"> {/* Changed from 7xl to 6xl */}
+        <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
           isDarkMode ? 'bg-neutral-900/50 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
-        } shadow-xl`}>
+        } shadow-lg`}> {/* Changed from rounded-2xl to rounded-xl */}
           {/* Left Section - Headings */}
-          <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
-            <h4 className={`mb-3 text-base font-semibold ${
+          <div className="lg:w-2/5 p-8 lg:p-10 flex flex-col justify-center"> {/* Slightly reduced padding */}
+            <h4 className={`mb-3 text-sm font-semibold ${
               isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
               Let's Connect ...
             </h4>
-            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            <h2 className={`text-3xl font-bold mb-4 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Get in <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
                 isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
               } bg-clip-text text-transparent`}>Touch</span>
             </h2>
-            <p className={`text-base ${
+            <p className={`text-sm ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               Have a question, idea, or just want to say Hi! I'm always open to new opportunities and tech conversations.
             </p>
             
             {/* Contact Info */}
-            <div className="mt-8 space-y-3">
+            <div className="mt-6 space-y-3">
               <div className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 mr-3 ${
                   isDarkMode ? 'text-purple-400' : 'text-purple-600'
@@ -99,9 +99,9 @@ function Contact({ isDarkMode }) {
           }`}></div>
 
           {/* Right Section - Form */}
-          <div className="lg:w-3/5 p-8 lg:p-12">
+          <div className="lg:w-3/5 p-8 lg:p-10"> {/* Slightly reduced padding */}
             <form onSubmit={onSubmit}>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-6'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-5'> {/* Reduced mb-6 to mb-5 */}
                 <div>
                   <label className={`block text-sm font-medium mb-1 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
@@ -141,7 +141,7 @@ function Contact({ isDarkMode }) {
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>Message</label>
                 <textarea
-                  rows='6'
+                  rows='5'
                   placeholder='Your message ...'
                   maxLength={600}
                   className={`w-full p-3 text-sm outline-none border rounded-lg transition-all resize-none ${
@@ -181,10 +181,10 @@ function Contact({ isDarkMode }) {
                 <button 
                   type='submit' 
                   disabled={isSubmitting}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
+                  className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
                     isDarkMode 
-                      ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-lg hover:shadow-purple-500/30' 
-                      : 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-purple-600/30'
+                      ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-md hover:shadow-purple-500/30' 
+                      : 'bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-purple-600/30'
                   } ${isSubmitting ? 'opacity-80' : ''}`}
                 >
                   {isSubmitting ? (
