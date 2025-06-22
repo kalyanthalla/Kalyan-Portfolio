@@ -39,7 +39,7 @@ function Contact({ isDarkMode }) {
   return (
     <section 
       id="contact" 
-      className={`w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 min-h-[calc(100vh-80px)] flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 sm:px-6 lg:px-8 py-14 md:py-20 min-h-[calc(100vh-80px)] flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
@@ -53,12 +53,12 @@ function Contact({ isDarkMode }) {
         } blur-3xl animate-float-delay`}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10"> {/* Changed from 7xl to 6xl */}
+      <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
           isDarkMode ? 'bg-neutral-900/50 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
-        } shadow-lg`}> {/* Changed from rounded-2xl to rounded-xl */}
+        } shadow-lg`}>
           {/* Left Section - Headings */}
-          <div className="lg:w-2/5 p-8 lg:p-10 flex flex-col justify-center"> {/* Slightly reduced padding */}
+          <div className="lg:w-2/5 p-7 lg:p-10 flex flex-col justify-center">
             <h4 className={`mb-3 text-sm font-semibold ${
               isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
@@ -99,9 +99,9 @@ function Contact({ isDarkMode }) {
           }`}></div>
 
           {/* Right Section - Form */}
-          <div className="lg:w-3/5 p-8 lg:p-10"> {/* Slightly reduced padding */}
+          <div className="lg:w-3/5 p-7 lg:p-10">
             <form onSubmit={onSubmit}>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-5'> {/* Reduced mb-6 to mb-5 */}
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-5'>
                 <div>
                   <label className={`block text-sm font-medium mb-1 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
@@ -110,7 +110,7 @@ function Contact({ isDarkMode }) {
                     type='text' 
                     placeholder='Your name' 
                     required 
-                    className={`w-full p-3 text-sm outline-none border rounded-lg transition-all ${
+                    className={`w-full p-2.5 text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
                         ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
@@ -126,7 +126,7 @@ function Contact({ isDarkMode }) {
                     type='email' 
                     placeholder='Your email' 
                     required 
-                    className={`w-full p-3 text-sm outline-none border rounded-lg transition-all ${
+                    className={`w-full p-2.5 text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
                         ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
@@ -141,14 +141,14 @@ function Contact({ isDarkMode }) {
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>Message</label>
                 <textarea
-                  rows='5'
-                  placeholder='Your message ...'
-                  maxLength={600}
-                  className={`w-full p-3 text-sm outline-none border rounded-lg transition-all resize-none ${
+                  rows='4'
+                  className={`w-full p-2.5 text-sm outline-none border rounded-lg transition-all resize-none ${
                     isDarkMode
                       ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500'
                       : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
-                  }`}
+                  } lg:h-[120px]`} // Added lg:h-[120px] for desktop height
+                  placeholder='Your message ...'
+                  maxLength={600}
                   name='Message'
                   onChange={(e) => {
                     const wordCount = e.target.value.trim().split(/\s+/).filter(Boolean).length;
@@ -181,7 +181,7 @@ function Contact({ isDarkMode }) {
                 <button 
                   type='submit' 
                   disabled={isSubmitting}
-                  className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
+                  className={`px-5 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
                     isDarkMode 
                       ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-md hover:shadow-purple-500/30' 
                       : 'bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-purple-600/30'
