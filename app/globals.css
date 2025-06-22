@@ -5,16 +5,6 @@
   font-family: 'Noto Sans';
 }
 
-.roboto{
-  font-family: 'Roboto';
-}
-
-.navlink {
-  font-family: 'Roboto';
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
 .lightHover:hover {
   background-color: #fcf4ff;
 }
@@ -37,9 +27,4 @@
 
 .shadow-white {
   box-shadow: -10px 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.grid-cols-auto {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }

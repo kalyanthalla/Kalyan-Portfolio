@@ -40,7 +40,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             >
                 {/* Logo */}
                 <div className="flex items-center">
-                    <a href="#top" className="group">
+                    <a href="#top" className="group cursor-default">
                         <Image 
                             src={isDarkMode ? assets.logo_dark : assets.logo} 
                             alt="Logo" 
@@ -55,7 +55,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
-                                    className={`navlink relative text-lg font-semibold ${
+                                    className={`relative text-base font-semibold cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
@@ -123,7 +123,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             {navItems.map((item) => (
                                 <a 
                                     key={item} 
-                                    className={`text-md py-2 px-4 roboto ${
+                                    className={`text-base font-normal py-2 px-4 cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
