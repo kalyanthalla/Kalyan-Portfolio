@@ -43,7 +43,7 @@ const Work = ({ isDarkMode }) => {
             <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
               isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
             } bg-clip-text text-transparent`}>
-              My Projects
+              My Work
             </span>
           </h2>
           <p className={`text-base max-w-2xl mx-auto ${
