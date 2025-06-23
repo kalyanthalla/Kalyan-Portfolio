@@ -30,7 +30,7 @@ const About = ({ isDarkMode }) => {
                 About Me
               </span>
             </h2>
-            <p className={`text-base max-w-3xl mx-auto ${
+            <p className={`text-base poppins max-w-3xl mx-auto ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               Get to know more about my journey and skills
@@ -63,7 +63,7 @@ const About = ({ isDarkMode }) => {
                 <p className={`text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                  I'm a passionate <span className={`font-medium ${
+                  I'm a passionate <span className={`font-medium poppins ${
                     isDarkMode ? 'text-purple-400' : 'text-purple-600'
                   }`}>full stack web developer</span> with hands-on experience through internships and personal projects. My journey has equipped me with strong skills in the MERN stack and modern web technologies.
                 </p>
@@ -71,7 +71,7 @@ const About = ({ isDarkMode }) => {
                 <p className={`text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                  I specialize in building <span className={`font-medium ${
+                  I specialize in building <span className={`font-medium poppins ${
                     isDarkMode ? 'text-blue-400' : 'text-blue-600'
                   }`}>responsive, accessible web applications</span> that deliver exceptional user experiences, combining technical expertise with creative problem-solving.
                 </p>
@@ -79,7 +79,7 @@ const About = ({ isDarkMode }) => {
                 <div className={`p-5 rounded-xl backdrop-blur-sm border ${
                   isDarkMode ? 'bg-neutral-800/50 border-neutral-700' : 'bg-white/80 border-neutral-200'
                 } transition-all duration-300 hover:shadow-lg`}>
-                  <h3 className={`text-base font-semibold mb-3 flex items-center gap-2 ${
+                  <h3 className={`text-base font-semibold poppins mb-3 flex items-center gap-2 ${
                     isDarkMode ? 'text-purple-400' : 'text-purple-600'
                   }`}>
                     <span className={`inline-block w-2 h-2 rounded-full ${

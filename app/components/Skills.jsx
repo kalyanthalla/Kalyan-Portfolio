@@ -45,7 +45,7 @@ function Skills({ isDarkMode }) {
               My Skills
             </span>
           </h2>
-          <p className={`text-base max-w-2xl mx-auto ${
+          <p className={`text-base poppins max-w-2xl mx-auto ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             Here's a glimpse of the technologies I've mastered through real-world projects
@@ -60,7 +60,7 @@ function Skills({ isDarkMode }) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex-shrink-0 ${
+              className={`px-4 py-2 rounded-full text-sm poppins font-medium transition-all duration-200 flex-shrink-0 ${
                 activeTab === tab
                   ? isDarkMode
                     ? 'bg-purple-600 text-white shadow-lg'

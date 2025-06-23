@@ -55,7 +55,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
-                                    className={`relative text-base font-semibold inter cursor-default ${
+                                    className={`relative text-base font-semibold poppins cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
@@ -123,7 +123,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             {navItems.map((item) => (
                                 <a 
                                     key={item} 
-                                    className={`text-base font-normal py-2 px-4 cursor-default ${
+                                    className={`text-base font-normal poppins py-2 px-4 cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'

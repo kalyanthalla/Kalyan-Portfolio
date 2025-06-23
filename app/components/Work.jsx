@@ -46,7 +46,7 @@ const Work = ({ isDarkMode }) => {
               My Work
             </span>
           </h2>
-          <p className={`text-base max-w-2xl mx-auto ${
+          <p className={`text-base poppins max-w-2xl mx-auto ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             A collection of projects showcasing my skills, creativity, and growth as a developer.
@@ -106,7 +106,7 @@ const Work = ({ isDarkMode }) => {
                 </div>
                 
                 <div className="p-5">
-                  <p className={`mb-4 ${
+                  <p className={`mb-4 poppins ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-600'
                   }`}>
                     {project.description}

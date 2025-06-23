@@ -59,7 +59,7 @@ function Contact({ isDarkMode }) {
         } shadow-lg`}>
           {/* Left Section - Headings */}
           <div className="lg:w-2/5 p-7 lg:p-10 flex flex-col justify-center">
-            <h4 className={`mb-3 text-sm font-semibold ${
+            <h4 className={`mb-3 text-sm poppins font-semibold ${
               isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
               Let's Connect ...
@@ -86,7 +86,7 @@ function Contact({ isDarkMode }) {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span className={`text-sm ${
+                <span className={`text-sm poppins ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>thallasaikalyan@gmail.com</span>
               </div>
@@ -103,7 +103,7 @@ function Contact({ isDarkMode }) {
             <form onSubmit={onSubmit}>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-5'>
                 <div>
-                  <label className={`block text-sm font-medium mb-1 ${
+                  <label className={`block text-sm poppins font-medium mb-1 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>Name</label>
                   <input 
@@ -119,7 +119,7 @@ function Contact({ isDarkMode }) {
                   />
                 </div>
                 <div>
-                  <label className={`block text-sm font-medium mb-1 ${
+                  <label className={`block text-sm poppins font-medium mb-1 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>Email</label>
                   <input 
@@ -137,7 +137,7 @@ function Contact({ isDarkMode }) {
               </div>
               
               <div className='mb-4'>
-                <label className={`block text-sm font-medium mb-1 ${
+                <label className={`block text-sm poppins font-medium mb-1 ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>Message</label>
                 <textarea
@@ -181,7 +181,7 @@ function Contact({ isDarkMode }) {
                 <button 
                   type='submit' 
                   disabled={isSubmitting}
-                  className={`px-5 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 mx-auto ${
+                  className={`px-5 py-2 rounded-full font-medium poppins transition-all duration-300 flex items-center gap-2 mx-auto ${
                     isDarkMode 
                       ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-md hover:shadow-purple-500/30' 
                       : 'bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-purple-600/30'

@@ -37,7 +37,7 @@ function Header({ isDarkMode }) {
         <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
           <a 
             href="#work" 
-            className='px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group'
+            className='px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group'
           >
             View My Work
             <span className='group-hover:translate-x-1 transition-transform duration-300'>
@@ -48,7 +48,7 @@ function Header({ isDarkMode }) {
           <a 
             href="/MyResume.pdf" 
             download 
-            className={`px-8 py-3 rounded-full border-2 ${isDarkMode ? 'border-white text-white hover:border-purple-400 hover:text-purple-400' : 'border-black text-black hover:border-purple-500 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group`}
+            className={`px-8 py-3 rounded-full border-2 ${isDarkMode ? 'border-white text-white poppins hover:border-purple-400 hover:text-purple-400' : 'border-black text-black hover:border-purple-500 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group`}
           >
             Download CV
             <Image 

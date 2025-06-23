@@ -6,7 +6,7 @@ const Footer = ({ isDarkMode }) => {
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
-            <p className="text-sm">
+            <p className="text-sm poppins">
               © 2025 Thalla Sai Kalyan. All rights reserved.
             </p>
           </div>
