@@ -1,7 +1,11 @@
-import { Noto_Sans} from "next/font/google";
+import { Noto_Sans, Inter} from "next/font/google";
 import "./globals.css";
 
 const noto_sans = Noto_Sans({
+  subsets: ["latin"], weight: ["400", "500", "600", "700"]
+});
+
+const inter = Inter({
   subsets: ["latin"], weight: ["400", "500", "600", "700"]
 });
 
@@ -14,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${noto_sans.className} antialiased leading-8 
+        className={`${noto_sans.className} ${inter.className} antialiased leading-8 
         overflow-x-hidden darkTheme whiteText`}
       >
         {children}

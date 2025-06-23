@@ -5,6 +5,10 @@
   font-family: 'Noto Sans';
 }
 
+.inter{
+  font-family: 'Inter';
+}
+
 .lightHover:hover {
   background-color: #fcf4ff;
 }
