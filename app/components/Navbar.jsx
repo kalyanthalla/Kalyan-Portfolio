@@ -30,7 +30,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     return (
         <>
             <nav
-                className={`w-full fixed h-16 md:h-20 px-4 sm:px-6 lg:px-8 xl:px-[5%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+                className={`w-full fixed h-18 md:h-20 px-4 sm:px-6 lg:px-8 xl:px-[5%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
                     isDarkMode ? 'shadow-white' : 'shadow-black'
                 } ${
                     isScroll
@@ -46,7 +46,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="Logo" 
                             width={80}
                             height={40}
-                            className="w-16 md:w-20 h-auto"
+                            className="w-18 md:w-20 h-auto"
                         />
                     </a>
                 </div>
@@ -57,7 +57,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
-                                    className={`relative text-sm md:text-base font-medium md:font-semibold poppins cursor-default ${
+                                    className={`relative text-base font-medium poppins cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
@@ -81,7 +81,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="" 
                             width={28}
                             height={28}
-                            className="w-6 md:w-7 h-6 md:h-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
+                            className="w-6 h-6 md:w-7 md:h-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
                         />
                         
                         {/* Filled icon */}
@@ -90,7 +90,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="" 
                             width={28}
                             height={28}
-                            className="w-6 md:w-7 h-6 md:h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                            className="w-6 h-6 md:w-7 md:h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                         />
                     </button>
 
@@ -105,7 +105,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="Menu" 
                             width={32}
                             height={32}
-                            className="w-7 md:w-8 h-7 md:h-8"
+                            className="w-7 h-7"
                         />
                     </button>
 
@@ -125,7 +125,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                                 alt="Close menu" 
                                 width={28}
                                 height={28}
-                                className="w-6 md:w-7 h-6 md:h-7 transition-transform duration-300 hover:scale-110"
+                                className="w-6 h-6 transition-transform duration-300 hover:scale-110"
                             />
                         </div>
 
@@ -133,7 +133,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             {navItems.map((item) => (
                                 <a 
                                     key={item} 
-                                    className={`text-base font-normal poppins py-2 px-4 cursor-default ${
+                                    className={`text-sm font-medium poppins py-5 px-4 cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
