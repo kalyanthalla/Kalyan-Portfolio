@@ -59,19 +59,19 @@ function Contact({ isDarkMode }) {
         } shadow-lg`}>
           {/* Left Section - Headings */}
           <div className="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-            <h4 className={`mb-3 text-sm sm:text-sm poppins font-semibold ${
+            <h4 className={`mb-3 text-base sm:text-lg poppins font-semibold ${
               isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
               Let's Connect ...
             </h4>
-            <h2 className={`text-3xl sm:text-3xl font-bold mb-4 sm:mb-4 ${
+            <h2 className={`text-3xl sm:text-4xl font-bold mb-4 sm:mb-4 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Get in <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
                 isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
               } bg-clip-text text-transparent`}>Touch</span>
             </h2>
-            <p className={`text-sm sm:text-sm ${
+            <p className={`text-sm sm:text-base ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             } mb-6`}>
               Have a question, idea, or just want to say Hi! I'm always open to new opportunities and tech conversations.
