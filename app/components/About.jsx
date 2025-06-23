@@ -23,14 +23,14 @@ const About = ({ isDarkMode }) => {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="w-full">
           <div className="mb-10 md:mb-14 text-center">
-            <h2 className='text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 relative inline-block'>
+            <h2 className='text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 relative inline-block'>
               <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
                 isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
               } bg-clip-text text-transparent`}>
                 About Me
               </span>
             </h2>
-            <p className={`text-base sm:text-lg poppins max-w-3xl mx-auto ${
+            <p className={`text-sm sm:text-base poppins max-w-3xl mx-auto ${
               isDarkMode ? 'text-zinc-300' : 'text-zinc-600'
             }`}>
               Get to know more about my journey and skills
@@ -60,7 +60,7 @@ const About = ({ isDarkMode }) => {
             {/* Text Content */}
             <div className='flex-1 order-2 lg:order-1'>
               <div className="space-y-5 md:space-y-7">
-                <p className={`text-base sm:text-lg leading-relaxed text-justify ${
+                <p className={`text-sm sm:text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-zinc-300' : 'text-zinc-700'
                 }`}>
                   I'm a passionate <span className={`font-medium poppins ${
@@ -68,7 +68,7 @@ const About = ({ isDarkMode }) => {
                   }`}>full stack web developer</span> with hands-on experience through internships and personal projects. My journey has equipped me with strong skills in the MERN stack and modern web technologies.
                 </p>
                 
-                <p className={`text-base sm:text-lg leading-relaxed text-justify ${
+                <p className={`text-sm sm:text-base leading-relaxed text-justify ${
                   isDarkMode ? 'text-zinc-300' : 'text-zinc-700'
                 }`}>
                   I specialize in building <span className={`font-medium poppins ${
@@ -79,7 +79,7 @@ const About = ({ isDarkMode }) => {
                 <div className={`p-5 sm:p-6 rounded-xl backdrop-blur-sm border ${
                   isDarkMode ? 'bg-zinc-800/50 border-zinc-700' : 'bg-white/80 border-zinc-200'
                 } transition-all duration-300 hover:shadow-lg`}>
-                  <h3 className={`text-base sm:text-lg font-semibold poppins mb-3 sm:mb-4 flex items-center gap-3 ${
+                  <h3 className={`text-sm sm:text-base font-semibold poppins mb-3 sm:mb-4 flex items-center gap-3 ${
                     isDarkMode ? 'text-purple-400' : 'text-purple-600'
                   }`}>
                     <span className={`inline-block w-3 h-3 rounded-full ${

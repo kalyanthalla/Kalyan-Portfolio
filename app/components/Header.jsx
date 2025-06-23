@@ -14,7 +14,7 @@ function Header({ isDarkMode }) {
       {/* Main content */}
       <div className='text-center max-w-3xl px-4 w-full'>
         {/* Greeting */}
-        <h3 className={`flex items-center justify-center gap-2 text-xl md:text-3xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        <h3 className={`flex items-center justify-center gap-2 text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-white' : 'text-black'}`}>
           Hello, I'm <span className={`${isDarkMode ? 'text-purple-400' : 'text-purple-700'} font-semibold`}>Thalla Sai Kalyan</span>
           <span className="wave-emoji" role="img" aria-label="wave">👋</span>
         </h3>
