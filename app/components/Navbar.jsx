@@ -81,7 +81,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="" 
                             width={28}
                             height={28}
-                            className="w-6 h-6 md:w-7 md:h-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
+                            className="w-7 h-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
                         />
                         
                         {/* Filled icon */}
@@ -90,7 +90,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="" 
                             width={28}
                             height={28}
-                            className="w-6 h-6 md:w-7 md:h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                            className="w-7 h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                         />
                     </button>
 
@@ -105,7 +105,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="Menu" 
                             width={32}
                             height={32}
-                            className="w-7 h-7"
+                            className="w-8 h-8"
                         />
                     </button>
 
@@ -125,7 +125,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                                 alt="Close menu" 
                                 width={28}
                                 height={28}
-                                className="w-6 h-6 transition-transform duration-300 hover:scale-110"
+                                className="w-7 h-7 transition-transform duration-300 hover:scale-110"
                             />
                         </div>
 
