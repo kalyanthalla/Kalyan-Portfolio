@@ -60,8 +60,8 @@ const Work = ({ isDarkMode }) => {
             onClick={prevProject}
             className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
               isDarkMode 
-                ? 'bg-neutral-800 hover:bg-neutral-700 text-purple-400 border border-neutral-700' 
-                : 'bg-white hover:bg-neutral-100 text-purple-600 border border-neutral-200'
+                ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
+                : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
             } transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-x-1`}
             aria-label="Previous project"
           >
@@ -81,7 +81,7 @@ const Work = ({ isDarkMode }) => {
               <div 
                 key={index} 
                 className={`rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl ${
-                  isDarkMode ? 'bg-neutral-900/70 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
+                  isDarkMode ? 'bg-zinc-900/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
                 } ${index === 1 ? 'scale-105 z-10' : 'scale-95 opacity-90 hover:opacity-100'} hover:-translate-y-2`}
               >
                 <div className="p-4 sm:p-5">
@@ -101,7 +101,7 @@ const Work = ({ isDarkMode }) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${
-                    isDarkMode ? 'from-neutral-900/80 to-transparent' : 'from-white/80 to-transparent'
+                    isDarkMode ? 'from-zinc-900/80 to-transparent' : 'from-white/80 to-transparent'
                   }`}></div>
                 </div>
                 
@@ -119,8 +119,8 @@ const Work = ({ isDarkMode }) => {
                           key={i}
                           className={`text-xs px-2 py-1 rounded ${
                             isDarkMode 
-                              ? 'bg-neutral-700 text-purple-300' 
-                              : 'bg-neutral-100 text-purple-700'
+                              ? 'bg-zinc-700 text-purple-300' 
+                              : 'bg-zinc-100 text-purple-700'
                           }`}
                         >
                           {tech}
@@ -136,8 +136,8 @@ const Work = ({ isDarkMode }) => {
                           rel="noopener noreferrer"
                           className={`p-2 rounded-full transition-all ${
                             isDarkMode 
-                              ? 'bg-neutral-700 hover:bg-neutral-600 text-white' 
-                              : 'bg-neutral-200 hover:bg-neutral-300 text-gray-800'
+                              ? 'bg-zinc-700 hover:bg-zinc-600 text-white' 
+                              : 'bg-zinc-200 hover:bg-zinc-300 text-gray-800'
                           } shadow-md hover:shadow-lg`}
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -173,8 +173,8 @@ const Work = ({ isDarkMode }) => {
             onClick={nextProject}
             className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
               isDarkMode 
-                ? 'bg-neutral-800 hover:bg-neutral-700 text-purple-400 border border-neutral-700' 
-                : 'bg-white hover:bg-neutral-100 text-purple-600 border border-neutral-200'
+                ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
+                : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
             } transition-all duration-300 shadow-lg hover:shadow-xl transform hover:translate-x-1`}
             aria-label="Next project"
           >
@@ -188,7 +188,7 @@ const Work = ({ isDarkMode }) => {
         {/* Mobile: Single Card */}
         <div className="md:hidden">
           <div className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 mb-4 ${
-            isDarkMode ? 'bg-neutral-900/70 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
+            isDarkMode ? 'bg-zinc-900/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
           } hover:shadow-xl hover:-translate-y-1`}>
             <div className="p-4">
               <h3 className={`text-lg font-bold mb-2 ${
@@ -207,7 +207,7 @@ const Work = ({ isDarkMode }) => {
                 sizes="100vw"
               />
               <div className={`absolute inset-0 bg-gradient-to-t ${
-                isDarkMode ? 'from-neutral-900/80 to-transparent' : 'from-white/80 to-transparent'
+                isDarkMode ? 'from-zinc-900/80 to-transparent' : 'from-white/80 to-transparent'
               }`}></div>
             </div>
             
@@ -225,8 +225,8 @@ const Work = ({ isDarkMode }) => {
                       key={i}
                       className={`text-xs px-2 py-1 rounded ${
                         isDarkMode 
-                          ? 'bg-neutral-700 text-purple-300' 
-                          : 'bg-neutral-100 text-purple-700'
+                          ? 'bg-zinc-700 text-purple-300' 
+                          : 'bg-zinc-100 text-purple-700'
                       }`}
                     >
                       {tech}
@@ -242,8 +242,8 @@ const Work = ({ isDarkMode }) => {
                       rel="noopener noreferrer"
                       className={`p-2 rounded-full transition-all ${
                         isDarkMode 
-                          ? 'bg-neutral-700 hover:bg-neutral-600 text-white' 
-                          : 'bg-neutral-200 hover:bg-neutral-300 text-gray-800'
+                          ? 'bg-zinc-700 hover:bg-zinc-600 text-white' 
+                          : 'bg-zinc-200 hover:bg-zinc-300 text-gray-800'
                       } shadow-md hover:shadow-lg`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -278,8 +278,8 @@ const Work = ({ isDarkMode }) => {
               onClick={prevProject}
               className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
                 isDarkMode 
-                  ? 'bg-neutral-800 hover:bg-neutral-700 text-purple-400 border border-neutral-700' 
-                  : 'bg-white hover:bg-neutral-100 text-purple-600 border border-neutral-200'
+                  ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
+                  : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
               } transition-all duration-300 shadow-lg hover:shadow-xl`}
               aria-label="Previous project"
             >
@@ -297,7 +297,7 @@ const Work = ({ isDarkMode }) => {
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     currentIndex === index 
                       ? isDarkMode ? 'bg-purple-400 w-3 sm:w-4' : 'bg-purple-600 w-3 sm:w-4'
-                      : isDarkMode ? 'bg-neutral-600' : 'bg-neutral-300'
+                      : isDarkMode ? 'bg-zinc-600' : 'bg-zinc-300'
                   }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
@@ -308,8 +308,8 @@ const Work = ({ isDarkMode }) => {
               onClick={nextProject}
               className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
                 isDarkMode 
-                  ? 'bg-neutral-800 hover:bg-neutral-700 text-purple-400 border border-neutral-700' 
-                  : 'bg-white hover:bg-neutral-100 text-purple-600 border border-neutral-200'
+                  ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
+                  : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
               } transition-all duration-300 shadow-lg hover:shadow-xl`}
               aria-label="Next project"
             >

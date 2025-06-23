@@ -55,7 +55,7 @@ function Contact({ isDarkMode }) {
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
-          isDarkMode ? 'bg-neutral-900/50 border border-neutral-700' : 'bg-white/90 border border-neutral-200'
+          isDarkMode ? 'bg-zinc-900/50 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
         } shadow-lg`}>
           {/* Left Section - Headings */}
           <div className="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
@@ -95,7 +95,7 @@ function Contact({ isDarkMode }) {
 
           {/* Vertical Divider - Hidden on mobile */}
           <div className={`hidden lg:block w-px ${
-            isDarkMode ? 'bg-neutral-700' : 'bg-neutral-200'
+            isDarkMode ? 'bg-zinc-700' : 'bg-zinc-200'
           }`}></div>
 
           {/* Right Section - Form */}
@@ -112,7 +112,7 @@ function Contact({ isDarkMode }) {
                     required 
                     className={`w-full p-2 sm:p-2.5 text-xs sm:text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
+                        ? 'bg-zinc-800/50 border-zinc-700 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='Name'
@@ -128,7 +128,7 @@ function Contact({ isDarkMode }) {
                     required 
                     className={`w-full p-2 sm:p-2.5 text-xs sm:text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500' 
+                        ? 'bg-zinc-800/50 border-zinc-700 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='E-mail'
@@ -144,7 +144,7 @@ function Contact({ isDarkMode }) {
                   rows='4'
                   className={`w-full p-2 sm:p-2.5 text-xs sm:text-sm outline-none border rounded-lg transition-all resize-none ${
                     isDarkMode
-                      ? 'bg-neutral-800/50 border-neutral-700 text-white focus:border-purple-500 hover:border-purple-500'
+                      ? 'bg-zinc-800/50 border-zinc-700 text-white focus:border-purple-500 hover:border-purple-500'
                       : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                   } lg:h-[120px]`}
                   placeholder='Your message ...'

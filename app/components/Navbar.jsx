@@ -34,7 +34,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     isDarkMode ? 'shadow-white' : 'shadow-black'
                 } ${
                     isScroll
-                        ? `${isDarkMode ? 'bg-neutral-900/90' : 'bg-white/90'}`
+                        ? `${isDarkMode ? 'bg-zinc-900/90' : 'bg-white/90'}`
                         : 'bg-transparent'
                 }`}
             >
@@ -60,7 +60,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                                     className={`relative text-base font-medium poppins cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
-                                            : 'text-gray-700 hover:text-black'
+                                            : 'text-gray-700 hover:text-gray'
                                     } transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-500 hover:after:w-full after:transition-all after:duration-300`}
                                     href={item === 'Home' ? '#top' : `#${item.toLowerCase()}`}
                                 >
@@ -113,7 +113,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     <div 
                         ref={sideMenuRef} 
                         className={`flex md:hidden flex-col fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition-all duration-500 ease-in-out ${
-                            isDarkMode ? 'bg-neutral-900' : 'bg-white'
+                            isDarkMode ? 'bg-zinc-900' : 'bg-white'
                         } shadow-xl`}
                     >
                         <div 
@@ -136,7 +136,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                                     className={`text-base font-normal poppins py-4 px-4 cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
-                                            : 'text-gray-700 hover:text-black'
+                                            : 'text-gray-700 hover:text-gray'
                                     }`} 
                                     onClick={closeMenu} 
                                     href={item === 'Home' ? '#top' : `#${item.toLowerCase()}`}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <footer className={`${isDarkMode ? 'bg-neutral-900 text-gray-300' : 'bg-neutral-50 text-gray-600'} transition-colors duration-300`}>
+    <footer className={`${isDarkMode ? 'bg-zinc-900 text-gray-300' : 'bg-zinc-50 text-gray-600'} transition-colors duration-300`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
@@ -19,8 +19,8 @@ const Footer = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               className={`p-1 rounded-full transition-colors ${
                 isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-neutral-700' 
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-neutral-200'
+                  ? 'text-gray-400 hover:text-white hover:bg-zinc-700' 
+                  : 'text-gray-500 hover:text-gray-900 hover:bg-zinc-200'
               }`}
               aria-label="GitHub"
             >
@@ -36,8 +36,8 @@ const Footer = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               className={`p-1 rounded-full transition-colors ${
                 isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-neutral-700' 
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-neutral-200'
+                  ? 'text-gray-400 hover:text-white hover:bg-zinc-700' 
+                  : 'text-gray-500 hover:text-gray-900 hover:bg-zinc-200'
               }`}
               aria-label="LinkedIn"
             >
