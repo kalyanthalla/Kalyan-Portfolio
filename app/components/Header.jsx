@@ -4,23 +4,23 @@ import React from 'react'
 
 function Header({ isDarkMode }) {
   return (
-    <header className='w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto h-screen flex flex-col items-center justify-center gap-6 relative overflow-hidden'>
+    <header className='w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto h-screen flex flex-col items-center justify-center gap-4 sm:gap-6 relative overflow-hidden'>
       {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden -z-10'>
-        <div className='absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl animate-float'></div>
-        <div className='absolute top-2/3 right-1/3 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl animate-float-delay'></div>
+        <div className='absolute top-1/4 left-1/4 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-purple-500/10 blur-3xl animate-float'></div>
+        <div className='absolute top-2/3 right-1/3 w-56 sm:w-80 h-56 sm:h-80 rounded-full bg-blue-500/10 blur-3xl animate-float-delay'></div>
       </div>
 
       {/* Main content */}
-      <div className='text-center max-w-3xl px-4'>
+      <div className='text-center max-w-3xl px-4 w-full'>
         {/* Greeting */}
-        <h3 className={`flex items-center justify-center gap-2 text-xl md:text-2xl mb-4 font-medium ${isDarkMode ? 'text-white' : 'text-black'}`}>
-  Hello, I'm <span className={`${isDarkMode ? 'text-purple-400' : 'text-purple-700'} font-semibold`}>Thalla Sai Kalyan</span>
+        <h3 className={`flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-white' : 'text-black'}`}>
+          Hello, I'm <span className={`${isDarkMode ? 'text-purple-400' : 'text-purple-700'} font-semibold`}>Thalla Sai Kalyan</span>
           <span className="wave-emoji" role="img" aria-label="wave">👋</span>
         </h3>
 
         {/* Main headline */}
-        <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8'>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 sm:mb-8'>
           <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'} bg-clip-text text-transparent`}>
             Full-Stack Developer
           </span>
@@ -28,16 +28,16 @@ function Header({ isDarkMode }) {
         </h1>
 
         {/* Description */}
-        <p className={`text-md max-w-2xl mx-auto mb-10`}>
+        <p className={`text-sm sm:text-md max-w-2xl mx-auto mb-8 sm:mb-10`}>
           I build exceptional digital experiences with modern web technologies.
           Currently specializing in the MERN stack and responsive design.
         </p>
 
         {/* Action buttons */}
-        <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12'>
           <a 
             href="#work" 
-            className='px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group'
+            className='px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group'
           >
             View My Work
             <span className='group-hover:translate-x-1 transition-transform duration-300'>
@@ -48,21 +48,21 @@ function Header({ isDarkMode }) {
           <a 
             href="/MyResume.pdf" 
             download 
-            className={`px-8 py-3 rounded-full border-2 ${isDarkMode ? 'border-white text-white poppins hover:border-purple-400 hover:text-purple-400' : 'border-black text-black hover:border-purple-500 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group`}
+            className={`px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base rounded-full border-2 ${isDarkMode ? 'border-white text-white poppins hover:border-purple-400 hover:text-purple-400' : 'border-black text-black hover:border-purple-500 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group`}
           >
             Download CV
             <Image 
               src={isDarkMode ? assets.download_icon_dark : assets.download_icon} 
               alt='Download icon' 
-              width={23} 
-              height={23} 
-              className='group-hover:translate-y-1 transition-transform duration-300'
+              width={20} 
+              height={20} 
+              className='w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-1 transition-transform duration-300'
             />
           </a>
         </div>
 
         {/* Social links */}
-        <div className='flex gap-6 justify-center'>
+        <div className='flex gap-4 sm:gap-6 justify-center'>
           {[
             { 
               name: 'GitHub',
@@ -90,7 +90,7 @@ function Header({ isDarkMode }) {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-3 rounded-full hover:bg-neutral-200 dark:hover:bg-gray-800 transition-colors duration-300 ${
+              className={`p-2 sm:p-3 rounded-full hover:bg-neutral-200 dark:hover:bg-gray-800 transition-colors duration-300 ${
                 social.name === 'Twitter' ? 'hover:text-blue-400 dark:hover:text-blue-300' :
                 'hover:text-gray-900 dark:hover:text-white'
               }`}
@@ -103,8 +103,8 @@ function Header({ isDarkMode }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <div className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
         </svg>
       </div>

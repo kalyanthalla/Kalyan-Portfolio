@@ -30,7 +30,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     return (
         <>
             <nav
-                className={`w-full fixed h-[70px] px-4 lg:px-5 xl:px-[5%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${
+                className={`w-full fixed h-16 md:h-20 px-4 sm:px-6 lg:px-8 xl:px-[5%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
                     isDarkMode ? 'shadow-white' : 'shadow-black'
                 } ${
                     isScroll
@@ -44,18 +44,20 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         <Image 
                             src={isDarkMode ? assets.logo_dark : assets.logo} 
                             alt="Logo" 
-                            className="w-20"
+                            width={80}
+                            height={40}
+                            className="w-16 md:w-20 h-auto"
                         />
                     </a>
                 </div>
 
                 {/* Navigation Items */}
-                <div className="flex items-center gap-8">
-                    <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+                <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+                    <ul className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-8">
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
-                                    className={`relative text-base font-semibold poppins cursor-default ${
+                                    className={`relative text-sm md:text-base font-medium md:font-semibold poppins cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
                                             : 'text-gray-700 hover:text-black'
@@ -71,20 +73,24 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     {/* Theme Toggle */}
                     <button 
                         onClick={() => setIsDarkMode(prev => !prev)}
-                        className="group relative"
+                        className="group relative p-1"
                     >
                         {/* Regular icon */}
                         <Image 
                             src={isDarkMode ? assets.sun_icon : assets.moon_icon} 
                             alt="" 
-                            className="w-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
+                            width={28}
+                            height={28}
+                            className="w-6 md:w-7 h-6 md:h-7 cursor-pointer transition-transform duration-300 hover:scale-110 group-hover:opacity-0"
                         />
                         
                         {/* Filled icon */}
                         <Image 
                             src={isDarkMode ? assets.sun_icon_fill : assets.moon_icon_fill} 
                             alt="" 
-                            className="w-7 cursor-pointer absolute top-0 left-0 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                            width={28}
+                            height={28}
+                            className="w-6 md:w-7 h-6 md:h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                         />
                     </button>
 
@@ -97,7 +103,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                         <Image 
                             src={isDarkMode ? assets.menu_icon_dark : assets.menu_icon} 
                             alt="Menu" 
-                            className="w-8"
+                            width={32}
+                            height={32}
+                            className="w-7 md:w-8 h-7 md:h-8"
                         />
                     </button>
 
@@ -115,11 +123,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             <Image 
                                 src={isDarkMode ? assets.close_icon_dark : assets.close_icon} 
                                 alt="Close menu" 
-                                className="w-7 transition-transform duration-300 hover:scale-110"
+                                width={28}
+                                height={28}
+                                className="w-6 md:w-7 h-6 md:h-7 transition-transform duration-300 hover:scale-110"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-4 mt-20 px-8">
+                        <div className="flex flex-col gap-3 md:gap-4 mt-20 px-6 md:px-8">
                             {navItems.map((item) => (
                                 <a 
                                     key={item} 
