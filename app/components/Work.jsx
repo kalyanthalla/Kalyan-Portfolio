@@ -22,7 +22,7 @@ const Work = ({ isDarkMode }) => {
   return (
     <section 
       id="work" 
-      className={`w-full px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 sm:px-6 lg:px-8 pt-8 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'darkTheme text-gray-100' : 'bg-white text-gray-800'
       }`}
     >
@@ -38,7 +38,7 @@ const Work = ({ isDarkMode }) => {
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Heading Section */}
-        <div className="mb-8 md:mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <h2 className='text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 relative inline-block'>
             <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
               isDarkMode ? 'dark:to-purple-400' : 'dark:from-blue-500'
@@ -187,9 +187,9 @@ const Work = ({ isDarkMode }) => {
 
         {/* Mobile: Single Card */}
         <div className="md:hidden">
-          <div className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 mb-6 ${
+          <div className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 mb-8 ${
             isDarkMode ? 'bg-zinc-900/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
-          } hover:shadow-xl hover:-translate-y-1 min-h-[400px]`}>
+          } hover:shadow-xl hover:-translate-y-1 min-h-[450px]`}>
             <div className="p-4">
               <h3 className={`text-xl font-bold mb-3 ${
                 isDarkMode ? 'text-white' : 'text-gray-900'
@@ -273,7 +273,7 @@ const Work = ({ isDarkMode }) => {
           </div>
 
           {/* Mobile Arrows Below Card */}
-          <div className="flex justify-center items-center gap-6 mt-6">
+          <div className="flex justify-center items-center gap-6 mt-8">
             <button 
               onClick={prevProject}
               className={`p-3 rounded-full flex items-center justify-center ${
