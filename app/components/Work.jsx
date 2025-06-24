@@ -85,7 +85,7 @@ const Work = ({ isDarkMode }) => {
                 } ${index === 1 ? 'scale-105 z-10' : 'scale-95 opacity-90 hover:opacity-100'} hover:-translate-y-2`}
               >
                 <div className="p-4 sm:p-5">
-                  <h3 className={`text-lg sm:text-xl font-bold mb-2 ${
+                  <h3 className={`text-base sm:text-lg font-bold mb-2 ${
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}>
                     {project.title}
@@ -191,7 +191,7 @@ const Work = ({ isDarkMode }) => {
             isDarkMode ? 'bg-zinc-900/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
           } hover:shadow-xl hover:-translate-y-1 min-h-[450px]`}>
             <div className="p-4">
-              <h3 className={`text-xl font-bold mb-3 ${
+              <h3 className={`text-base font-bold mb-3 ${
                 isDarkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 {currentProject.title}

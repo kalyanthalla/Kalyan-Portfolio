@@ -59,7 +59,7 @@
   <button
     key={tab}
     onClick={() => setActiveTab(tab)}
-    className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base poppins font-medium transition-all duration-200 flex-shrink-0 ${
+    className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-sm poppins font-medium transition-all duration-200 flex-shrink-0 ${
       activeTab === tab
         ? isDarkMode
           ? 'bg-purple-600 text-white shadow-lg'

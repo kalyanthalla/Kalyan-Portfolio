@@ -59,12 +59,12 @@ function Contact({ isDarkMode }) {
         } shadow-lg`}>
           {/* Left Section - Headings */}
           <div className="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-            <h4 className={`mb-3 text-base sm:text-lg poppins font-semibold ${
+            <h4 className={`mb-3 text-sm sm:text-base poppins font-semibold ${
               isDarkMode ? 'text-purple-400' : 'text-purple-600'
             }`}>
               Let's Connect ...
             </h4>
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-4 sm:mb-4 ${
+            <h2 className={`text-2xl sm:text-3xl font-bold mb-4 sm:mb-4 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Get in <span className={`bg-gradient-to-r from-blue-600 to-purple-600 ${
@@ -107,8 +107,7 @@ function Contact({ isDarkMode }) {
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>Name</label>
                   <input 
-                    type='text' 
-                    placeholder='Your name' 
+                    type='text'
                     required 
                     className={`w-full p-3 sm:p-2.5 text-sm sm:text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
@@ -124,7 +123,6 @@ function Contact({ isDarkMode }) {
                   }`}>Email</label>
                   <input 
                     type='email' 
-                    placeholder='Your email' 
                     required 
                     className={`w-full p-3 sm:p-2.5 text-sm sm:text-sm outline-none border rounded-lg transition-all ${
                       isDarkMode 
@@ -141,13 +139,12 @@ function Contact({ isDarkMode }) {
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>Message</label>
                 <textarea
-                  rows='5'
+                  rows='4'
                   className={`w-full p-3 sm:p-2.5 text-sm sm:text-sm outline-none border rounded-lg transition-all resize-none ${
                     isDarkMode
                       ? 'bg-zinc-800/50 border-zinc-700 text-white focus:border-purple-500 hover:border-purple-500'
                       : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                   }`}
-                  placeholder='Your message ...'
                   maxLength={600}
                   name='Message'
                   onChange={(e) => {
