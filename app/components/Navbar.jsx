@@ -4,25 +4,54 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     const [isScroll, setIsScroll] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const sideMenuRef = useRef()
 
     const openMenu = () => {
-        sideMenuRef.current.style.transform = 'translateX(-16rem)'
+        sideMenuRef.current.style.right = '0'
+        setIsMenuOpen(true)
     }
 
     const closeMenu = () => {
-        sideMenuRef.current.style.transform = 'translateX(16rem)'
+        sideMenuRef.current.style.right = '-100%'
+        setIsMenuOpen(false)
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (scrollY > 50) {
-                setIsScroll(true)
-            } else {
-                setIsScroll(false)
-            }
+    // Scroll event listener
+    const handleScroll = () => {
+        setIsScroll(window.scrollY > 50)
+    }
+    
+    // Smooth scrolling for anchor links
+    const handleAnchorClick = (e) => {
+        e.preventDefault()
+        const targetId = e.currentTarget.getAttribute('href')
+        const targetElement = document.querySelector(targetId)
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            })
+        } else {
+            // Fallback to default behavior if target doesn't exist
+            window.location.href = targetId
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    const anchorLinks = document.querySelectorAll('a[href^="#"]')
+    anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', handleAnchorClick)
+    })
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll)
+        anchorLinks.forEach(anchor => {
+            anchor.removeEventListener('click', handleAnchorClick)
         })
-    }, [])
+    }
+}, [])
 
     // Navigation items data
     const navItems = ['Home', 'About', 'Skills', 'Work', 'Contact']
@@ -30,14 +59,22 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     return (
         <>
             <nav
-                className={`w-full fixed h-18 md:h-20 px-4 sm:px-6 lg:px-8 xl:px-[5%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+                className={`w-full fixed h-18 md:h-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[5%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
                     isDarkMode ? 'shadow-white' : 'shadow-black'
                 } ${
                     isScroll
-                        ? `${isDarkMode ? 'bg-zinc-900/90' : 'bg-white/90'}`
+                        ? `${isDarkMode ? 'bg-zinc-900/90' : 'bg-white/90'} backdrop-blur-sm`
                         : 'bg-transparent'
                 }`}
             >
+                {/* Backdrop for mobile menu */}
+                {isMenuOpen && (
+                    <div 
+                        className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                        onClick={closeMenu}
+                    />
+                )}
+
                 {/* Logo */}
                 <div className="flex items-center">
                     <a href="#top" className="group cursor-default">
@@ -46,23 +83,25 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="Logo" 
                             width={80}
                             height={40}
-                            className="w-18 md:w-20 h-auto"
+                            className="w-16 sm:w-18 md:w-20 h-auto"
+                            priority
                         />
                     </a>
                 </div>
 
                 {/* Navigation Items */}
                 <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
-                    <ul className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-8">
+                    <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
                         {navItems.map((item) => (
                             <li key={item}>
                                 <a 
                                     className={`relative text-base font-medium poppins cursor-default ${
                                         isDarkMode 
                                             ? 'text-gray-200 hover:text-white' 
-                                            : 'text-gray-700 hover:text-gray'
+                                            : 'text-gray-700 hover:text-gray-900'
                                     } transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-500 hover:after:w-full after:transition-all after:duration-300`}
                                     href={item === 'Home' ? '#top' : `#${item.toLowerCase()}`}
+                                    aria-label={`Navigate to ${item}`}
                                 >
                                     {item}
                                 </a>
@@ -73,7 +112,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     {/* Theme Toggle */}
                     <button 
                         onClick={() => setIsDarkMode(prev => !prev)}
-                        className="group relative p-1"
+                        className="group relative p-2"
+                        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
                     >
                         {/* Regular icon */}
                         <Image 
@@ -90,13 +130,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             alt="" 
                             width={28}
                             height={28}
-                            className="w-7 h-7 cursor-pointer absolute top-1 left-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                            className="w-7 h-7 cursor-pointer absolute top-2 left-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                         />
                     </button>
 
                     {/* Mobile Menu Button */}
                     <button 
-                        className="block md:hidden p-2" 
+                        className="block md:hidden p-3" 
                         onClick={openMenu} 
                         aria-label="Open menu"
                     >
@@ -112,13 +152,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     {/* Mobile Menu */}
                     <div 
                         ref={sideMenuRef} 
-                        className={`flex md:hidden flex-col fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition-all duration-500 ease-in-out ${
+                        className={`flex md:hidden flex-col fixed right-[-100%] top-0 bottom-0 w-64 z-50 h-screen transition-all duration-500 ease-in-out ${
                             isDarkMode ? 'bg-zinc-900' : 'bg-white'
                         } shadow-xl`}
                     >
                         <div 
                             className="absolute right-6 top-6 p-2" 
                             onClick={closeMenu}
+                            aria-label="Close menu"
                         >
                             <Image 
                                 src={isDarkMode ? assets.close_icon_dark : assets.close_icon} 
@@ -129,17 +170,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                             />
                         </div>
 
-                        <div className="flex flex-col gap-3 md:gap-4 mt-20 px-6 md:px-8">
+                        <div className="flex flex-col gap-1 mt-20 px-4">
                             {navItems.map((item) => (
                                 <a 
                                     key={item} 
-                                    className={`text-base font-normal poppins py-5 px-6 cursor-default ${
+                                    className={`text-lg font-medium poppins py-4 px-6 rounded-lg transition-colors ${
                                         isDarkMode 
-                                            ? 'text-gray-200 hover:text-white' 
-                                            : 'text-gray-700 hover:text-gray'
+                                            ? 'text-gray-200 hover:text-white hover:bg-zinc-800' 
+                                            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                                     }`} 
                                     onClick={closeMenu} 
                                     href={item === 'Home' ? '#top' : `#${item.toLowerCase()}`}
+                                    aria-label={`Navigate to ${item}`}
                                 >
                                     {item}
                                 </a>

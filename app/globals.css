@@ -4,10 +4,10 @@
 * {
   font-family: 'Noto Sans', sans-serif;
 }
-.poppins {
-  font-family: 'Poppins', sans-serif;
-}
 
+.poppins {
+  font-family: 'Poppins', serif;
+}
 
 .dark .darkTheme {
   background-color: #1a1a1e;
