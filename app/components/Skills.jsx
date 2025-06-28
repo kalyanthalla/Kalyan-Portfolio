@@ -27,7 +27,7 @@ function Skills({ isDarkMode }) {
     <section 
       id="skills" 
       className={`w-full px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
-        isDarkMode ? 'bg-zinc-900 text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="skills-heading"
     >
@@ -73,8 +73,8 @@ function Skills({ isDarkMode }) {
                     ? 'bg-purple-600 text-white shadow-lg'
                     : 'bg-purple-100 text-purple-700 shadow-md'
                   : isDarkMode
-                    ? 'hover:bg-zinc-700 hover:text-white border-zinc-700'
-                    : 'hover:bg-zinc-100 hover:text-gray-900 border-zinc-200'
+                    ? 'hover:bg-gray-700 hover:text-white border-gray-700'
+                    : 'hover:bg-gray-100 hover:text-gray-900 border-gray-200'
               } border ${
                 activeTab === tab ? 'border-transparent' : ''
               }`}
@@ -95,13 +95,13 @@ function Skills({ isDarkMode }) {
                 key={index} 
                 className={`flex flex-col items-center p-3 sm:p-4 rounded-xl border transition-all duration-300 w-full group ${
                   isDarkMode 
-                    ? 'bg-zinc-800/50 border-zinc-700 hover:bg-zinc-700 hover:shadow-lg' 
-                    : 'bg-white/90 border-zinc-200 hover:bg-white hover:shadow-md'
+                    ? 'bg-gray-800/50 border-gray-700 hover:bg-gray-700 hover:shadow-lg' 
+                    : 'bg-white/90 border-gray-200 hover:bg-white hover:shadow-md'
                 } hover:-translate-y-1`}
                 role="listitem"
               >
                 <div className={`p-2 sm:p-3 rounded-lg mb-2 sm:mb-3 ${
-                  isDarkMode ? 'bg-zinc-700/50' : 'bg-zinc-100/80'
+                  isDarkMode ? 'bg-gray-700/50' : 'bg-gray-100/80'
                 } group-hover:scale-110 transition-transform duration-300`}>
                   <Image 
                     src={icon} 

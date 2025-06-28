@@ -27,7 +27,7 @@ const Work = ({ isDarkMode }) => {
     <section 
       id="work" 
       className={`w-full px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
-        isDarkMode ? 'bg-zinc-900 text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="work-heading"
     >
@@ -66,8 +66,8 @@ const Work = ({ isDarkMode }) => {
             onClick={prevProject}
             className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
               isDarkMode 
-                ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
-                : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
+                ? 'bg-gray-800 hover:bg-gray-700 text-purple-400 border border-gray-700' 
+                : 'bg-white hover:bg-gray-100 text-purple-600 border border-gray-200'
             } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}
             aria-label="Previous project"
           >
@@ -87,7 +87,7 @@ const Work = ({ isDarkMode }) => {
               <div 
                 key={`${project.title}-${index}`}
                 className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 ${
-                  isDarkMode ? 'bg-zinc-800/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
+                  isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/90 border border-gray-200'
                 } ${index === 1 ? 'scale-105 z-10' : 'scale-95 opacity-90 hover:opacity-100'} hover:-translate-y-2`}
               >
                 <div className="p-4 sm:p-5">
@@ -108,7 +108,7 @@ const Work = ({ isDarkMode }) => {
                     priority={index === 1} // Only prioritize the center image
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${
-                    isDarkMode ? 'from-zinc-900/80 to-transparent' : 'from-white/80 to-transparent'
+                    isDarkMode ? 'from-gray-900/80 to-transparent' : 'from-white/80 to-transparent'
                   }`}></div>
                 </div>
                 
@@ -126,8 +126,8 @@ const Work = ({ isDarkMode }) => {
                           key={i}
                           className={`text-xs px-2 py-1 rounded ${
                             isDarkMode 
-                              ? 'bg-zinc-700 text-purple-300' 
-                              : 'bg-zinc-100 text-purple-600'
+                              ? 'bg-gray-700 text-purple-300' 
+                              : 'bg-gray-100 text-purple-600'
                           }`}
                         >
                           {tech}
@@ -143,8 +143,8 @@ const Work = ({ isDarkMode }) => {
                           rel="noopener noreferrer"
                           className={`p-2 rounded-full transition-all ${
                             isDarkMode 
-                              ? 'bg-zinc-700 hover:bg-zinc-600 text-white' 
-                              : 'bg-zinc-200 hover:bg-zinc-300 text-gray-800'
+                              ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                              : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                           } shadow-md hover:shadow-lg hover:scale-105`}
                           aria-label={`View ${project.title} on GitHub`}
                         >
@@ -182,8 +182,8 @@ const Work = ({ isDarkMode }) => {
             onClick={nextProject}
             className={`p-2 sm:p-3 rounded-full flex items-center justify-center ${
               isDarkMode 
-                ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
-                : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
+                ? 'bg-gray-800 hover:bg-gray-700 text-purple-400 border border-gray-700' 
+                : 'bg-white hover:bg-gray-100 text-purple-600 border border-gray-200'
             } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}
             aria-label="Next project"
           >
@@ -197,7 +197,7 @@ const Work = ({ isDarkMode }) => {
         {/* Mobile: Single Card with better layout */}
         <div className="md:hidden">
           <div className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 mb-6 ${
-            isDarkMode ? 'bg-zinc-800/70 border border-zinc-700' : 'bg-white/90 border border-zinc-200'
+            isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/90 border border-gray-200'
           } hover:shadow-xl hover:-translate-y-1 min-h-[400px]`}>
             <div className="p-4 sm:p-5">
               <h3 className={`text-lg font-bold mb-3 ${
@@ -217,7 +217,7 @@ const Work = ({ isDarkMode }) => {
                 priority
               />
               <div className={`absolute inset-0 bg-gradient-to-t ${
-                isDarkMode ? 'from-zinc-900/80 to-transparent' : 'from-white/80 to-transparent'
+                isDarkMode ? 'from-gray-900/80 to-transparent' : 'from-white/80 to-transparent'
               }`}></div>
             </div>
             
@@ -235,8 +235,8 @@ const Work = ({ isDarkMode }) => {
                       key={i}
                       className={`text-xs px-2 py-1 rounded ${
                         isDarkMode 
-                          ? 'bg-zinc-700 text-purple-300' 
-                          : 'bg-zinc-100 text-purple-600'
+                          ? 'bg-gray-700 text-purple-300' 
+                          : 'bg-gray-100 text-purple-600'
                       }`}
                     >
                       {tech}
@@ -252,8 +252,8 @@ const Work = ({ isDarkMode }) => {
                       rel="noopener noreferrer"
                       className={`p-2 rounded-full transition-all ${
                         isDarkMode 
-                          ? 'bg-zinc-700 hover:bg-zinc-600 text-white' 
-                          : 'bg-zinc-200 hover:bg-zinc-300 text-gray-800'
+                          ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                          : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                       } shadow-md hover:shadow-lg hover:scale-105`}
                       aria-label={`View ${currentProject.title} on GitHub`}
                     >
@@ -294,7 +294,7 @@ const Work = ({ isDarkMode }) => {
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     currentIndex === index 
                       ? isDarkMode ? 'bg-purple-400 w-4' : 'bg-purple-600 w-4'
-                      : isDarkMode ? 'bg-zinc-600' : 'bg-zinc-300'
+                      : isDarkMode ? 'bg-gray-600' : 'bg-gray-300'
                   }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
@@ -306,8 +306,8 @@ const Work = ({ isDarkMode }) => {
                 onClick={prevProject}
                 className={`p-3 rounded-full flex items-center justify-center ${
                   isDarkMode 
-                    ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
-                    : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
+                    ? 'bg-gray-800 hover:bg-gray-700 text-purple-400 border border-gray-700' 
+                    : 'bg-white hover:bg-gray-100 text-purple-600 border border-gray-200'
                 } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}
                 aria-label="Previous project"
               >
@@ -321,8 +321,8 @@ const Work = ({ isDarkMode }) => {
                 onClick={nextProject}
                 className={`p-3 rounded-full flex items-center justify-center ${
                   isDarkMode 
-                    ? 'bg-zinc-800 hover:bg-zinc-700 text-purple-400 border border-zinc-700' 
-                    : 'bg-white hover:bg-zinc-100 text-purple-600 border border-zinc-200'
+                    ? 'bg-gray-800 hover:bg-gray-700 text-purple-400 border border-gray-700' 
+                    : 'bg-white hover:bg-gray-100 text-purple-600 border border-gray-200'
                 } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}
                 aria-label="Next project"
               >

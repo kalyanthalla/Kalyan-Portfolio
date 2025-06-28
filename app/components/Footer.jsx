@@ -5,7 +5,7 @@ const Footer = ({ isDarkMode }) => {
 
   return (
     <footer 
-      className={`${isDarkMode ? 'bg-zinc-900 text-gray-300' : 'bg-zinc-50 text-gray-600'} transition-colors duration-300 py-8 sm:py-10`}
+      className={`${isDarkMode ? 'bg-gray-900 text-gray-300' : 'bg-gray-50 text-gray-600'} transition-colors duration-300 py-8 sm:py-10`}
       aria-labelledby="footer-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,8 +25,8 @@ const Footer = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               className={`p-2 rounded-full transition-all ${
                 isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-zinc-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-zinc-200'
+                  ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
               } hover:scale-110`}
               aria-label="Visit my GitHub profile"
             >
@@ -51,8 +51,8 @@ const Footer = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               className={`p-2 rounded-full transition-all ${
                 isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-zinc-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-zinc-200'
+                  ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
               } hover:scale-110`}
               aria-label="Visit my LinkedIn profile"
             >
@@ -73,8 +73,8 @@ const Footer = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               className={`p-2 rounded-full transition-all ${
                 isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-zinc-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-zinc-200'
+                  ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
               } hover:scale-110`}
               aria-label="Visit my Twitter profile"
             >

@@ -7,7 +7,7 @@ const About = ({ isDarkMode }) => {
     <section 
       id='about' 
       className={`w-full px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 lg:pt-28 pb-16 md:pb-20 lg:pb-24 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
-        isDarkMode ? 'bg-zinc-900 text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="about-heading"
     >
@@ -82,7 +82,7 @@ const About = ({ isDarkMode }) => {
                 
                 {/* Motivations card with improved design */}
                 <div className={`p-4 sm:p-5 md:p-6 rounded-xl backdrop-blur-sm border ${
-                  isDarkMode ? 'bg-zinc-800/50 border-zinc-700' : 'bg-white/80 border-zinc-200'
+                  isDarkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'
                 } transition-all duration-300 hover:shadow-lg`}>
                   <h3 className={`text-base sm:text-base font-semibold mb-3 sm:mb-4 flex items-center gap-3 ${
                     isDarkMode ? 'text-purple-400' : 'text-purple-600'

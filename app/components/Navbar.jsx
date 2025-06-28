@@ -53,8 +53,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     }
 }, [])
 
-    // Navigation items data
-    const navItems = ['Home', 'About', 'Skills', 'Work', 'Contact']
+// Navigation items data
+const navItems = ['Home', 'About', 'Skills', 'Work', 'Contact']
 
     return (
         <>
@@ -63,7 +63,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     isDarkMode ? 'shadow-white' : 'shadow-black'
                 } ${
                     isScroll
-                        ? `${isDarkMode ? 'bg-zinc-900/90' : 'bg-white/90'} backdrop-blur-sm`
+                        ? `${isDarkMode ? 'bg-gray-900/90' : 'bg-white/90'} backdrop-blur-sm`
                         : 'bg-transparent'
                 }`}
             >
@@ -153,7 +153,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     <div 
                         ref={sideMenuRef} 
                         className={`flex md:hidden flex-col fixed right-[-100%] top-0 bottom-0 w-64 z-50 h-screen transition-all duration-500 ease-in-out ${
-                            isDarkMode ? 'bg-zinc-900' : 'bg-white'
+                            isDarkMode ? 'bg-gray-900' : 'bg-white'
                         } shadow-xl`}
                     >
                         <div 
@@ -176,7 +176,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                                     key={item} 
                                     className={`text-lg font-medium poppins py-4 px-6 rounded-lg transition-colors ${
                                         isDarkMode 
-                                            ? 'text-gray-200 hover:text-white hover:bg-zinc-800' 
+                                            ? 'text-gray-200 hover:text-white hover:bg-gray-800' 
                                             : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                                     }`} 
                                     onClick={closeMenu} 

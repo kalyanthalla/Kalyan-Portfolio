@@ -52,7 +52,7 @@ function Contact({ isDarkMode }) {
     <section 
       id="contact" 
       className={`w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
-        isDarkMode ? 'bg-zinc-900 text-gray-100' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="contact-heading"
     >
@@ -68,7 +68,7 @@ function Contact({ isDarkMode }) {
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
-          isDarkMode ? 'bg-zinc-800/70 border border-zinc-700' : 'bg-white/95 border border-zinc-200'
+          isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/95 border border-gray-200'
         } shadow-lg`}>
           {/* Left Section - Contact Info */}
           <div className="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
@@ -114,7 +114,7 @@ function Contact({ isDarkMode }) {
 
           {/* Vertical Divider - Hidden on mobile */}
           <div className={`hidden lg:block w-px ${
-            isDarkMode ? 'bg-zinc-700' : 'bg-zinc-200'
+            isDarkMode ? 'bg-gray-700' : 'bg-gray-200'
           }`} aria-hidden="true"></div>
 
           {/* Right Section - Form */}
@@ -136,7 +136,7 @@ function Contact({ isDarkMode }) {
                     required 
                     className={`w-full px-4 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-zinc-700/50 border-zinc-600 text-white focus:border-purple-500 hover:border-purple-500' 
+                        ? 'bg-gray-700/50 border-gray-600 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='Name'
@@ -158,7 +158,7 @@ function Contact({ isDarkMode }) {
                     required 
                     className={`w-full px-4 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base outline-none border rounded-lg transition-all ${
                       isDarkMode 
-                        ? 'bg-zinc-700/50 border-zinc-600 text-white focus:border-purple-500 hover:border-purple-500' 
+                        ? 'bg-gray-700/50 border-gray-600 text-white focus:border-purple-500 hover:border-purple-500' 
                         : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                     }`}
                     name='E-mail'
@@ -178,10 +178,10 @@ function Contact({ isDarkMode }) {
                 </label>
                 <textarea
                   id="message"
-                  rows='5'
+                  rows='4'
                   className={`w-full px-4 py-3 text-sm sm:text-base outline-none border rounded-lg transition-all resize-none ${
                     isDarkMode
-                      ? 'bg-zinc-700/50 border-zinc-600 text-white focus:border-purple-500 hover:border-purple-500'
+                      ? 'bg-gray-700/50 border-gray-600 text-white focus:border-purple-500 hover:border-purple-500'
                       : 'bg-white border-gray-300 text-gray-800 focus:border-purple-500 hover:border-purple-500'
                   }`}
                   maxLength={600}
