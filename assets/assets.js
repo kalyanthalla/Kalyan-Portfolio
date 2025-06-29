@@ -59,12 +59,12 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
-        link: "#",
-        github: "#",
-        techStack: ["React", "Next.js", "Tailwind CSS", "Node.js"],
+        title: 'Feedback Form',
+        description: 'Responsive feedback form with validation and dark mode.',
+        bgImage: '/feedbackform.png',
+        link: 'https://zesty-pastelito-36ee55.netlify.app/',
+        github: "https://github.com/kalyanthalla/FeedbackForm.git",
+        techStack: ["HTML5", "CSS3", "JavaScript"],
     },
     {
         title: 'Geo based app',
