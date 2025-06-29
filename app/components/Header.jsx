@@ -1,78 +1,176 @@
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 function Header({ isDarkMode }) {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const floatVariants = {
+    float: {
+      y: [0, -20, 0],
+      x: [0, 20, 0],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    floatDelayed: {
+      y: [0, -20, 0],
+      x: [0, 20, 0],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2
+      }
+    }
+  }
+
   return (
-    <header className={`w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col items-center justify-center gap-4 sm:gap-6 relative overflow-hidden ${isDarkMode ? 'dark' : 'light'}`}>
-      {/* Animated background elements - improved performance */}
+    <motion.header 
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className={`w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col items-center justify-center gap-4 sm:gap-6 relative overflow-hidden ${isDarkMode ? 'dark' : 'light'}`}
+    >
+      {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden -z-10 pointer-events-none'>
-        <div className='absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full bg-purple-500/10 blur-3xl animate-float'></div>
-        <div className='absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full bg-blue-500/10 blur-3xl animate-float-delay'></div>
+        <motion.div 
+          variants={floatVariants}
+          animate="float"
+          className='absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full bg-purple-500/10 blur-3xl'
+        />
+        <motion.div 
+          variants={floatVariants}
+          animate="floatDelayed"
+          className='absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full bg-blue-500/10 blur-3xl'
+        />
       </div>
 
-      {/* Main content with better responsive spacing */}
+      {/* Main content */}
       <div className='text-center max-w-2xl px-4 w-full'>
-        {/* Greeting with improved animation */}
-        <h3 className={`flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-gray-100' : 'text-gray-900'}`}>
+        {/* Greeting */}
+        <motion.h3 
+          variants={itemVariants}
+          className={`flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-gray-100' : 'text-gray-900'}`}
+        >
           Hello, I'm <span className={`${isDarkMode ? 'text-purple-400' : 'text-purple-600'} font-semibold`}>Thalla Sai Kalyan</span>
-          <span 
-            className="wave-emoji inline-block" 
+          <motion.span 
+            animate={{ rotate: [0, -10, 12, -10, 9, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 1]
+            }}
+            className="inline-block" 
             role="img" 
             aria-label="wave"
             style={{ transformOrigin: '70% 70%' }}
           >
             👋
-          </span>
-        </h3>
+          </motion.span>
+        </motion.h3>
 
-        {/* Main headline with better gradient contrast */}
-        <h1 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-8'>
+        {/* Main headline */}
+        <motion.h1 
+          variants={itemVariants}
+          className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-8'
+        >
           <span className={`bg-gradient-to-r ${isDarkMode ? 'from-blue-400 via-purple-400 to-purple-500' : 'from-blue-600 via-purple-600 to-purple-700'} bg-clip-text text-transparent`}>
             Full-Stack Developer
           </span>
-          <span className='typing-cursor ml-1'>_</span>
-        </h1>
+          <motion.span 
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
+            className='ml-1'
+          >
+            _
+          </motion.span>
+        </motion.h1>
 
-        {/* Description with improved readability */}
-        <p className={`text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+        {/* Description */}
+        <motion.p 
+          variants={itemVariants}
+          className={`text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}
+        >
           I build exceptional digital experiences with modern web technologies.
           Currently specializing in the MERN stack and responsive design.
-        </p>
+        </motion.p>
 
-        {/* Action buttons with better mobile layout */}
-        <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12'>
-          <a 
+        {/* Action buttons */}
+        <motion.div 
+          variants={containerVariants}
+          className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12'
+        >
+          <motion.a 
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="#work" 
-            className={`px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base rounded-full bg-gradient-to-r ${isDarkMode ? 'from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600' : 'from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'} text-white poppins transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group w-full sm:w-auto justify-center`}
+            className={`px-8 py-3 sm:px-8 sm:py-3 text-sm sm:text-base rounded-full bg-gradient-to-r ${isDarkMode ? 'from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600' : 'from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'} text-white poppins transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group w-full sm:w-auto justify-center`}
             aria-label="View my work"
           >
             View My Work
-            <span className='group-hover:translate-x-1 transition-transform duration-300'>
+            <motion.span 
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.3 }}
+            >
               →
-            </span>
-          </a>
+            </motion.span>
+          </motion.a>
 
-          <a 
+          <motion.a 
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="/MyResume.pdf" 
             download 
-            className={`px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base rounded-full border-2 ${isDarkMode ? 'border-gray-300 text-gray-300 hover:border-purple-400 hover:text-purple-400' : 'border-gray-700 text-gray-700 hover:border-purple-600 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group w-full sm:w-auto justify-center`}
+            className={`px-8 py-3 sm:px-8 sm:py-3 text-sm sm:text-base rounded-full border-2 ${isDarkMode ? 'border-gray-300 text-gray-300 hover:border-purple-400 hover:text-purple-400' : 'border-gray-700 text-gray-700 hover:border-purple-600 hover:text-purple-600'} transition-all duration-300 flex items-center gap-2 group w-full sm:w-auto justify-center`}
             aria-label="Download my CV"
           >
             Download CV
-            <Image 
-              src={isDarkMode ? assets.download_icon_dark : assets.download_icon} 
-              alt='Download icon' 
-              width={20} 
-              height={20} 
-              className='w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300'
-              aria-hidden="true"
-            />
-          </a>
-        </div>
+            <motion.div whileHover={{ y: 2 }}>
+              <Image 
+                src={isDarkMode ? assets.download_icon_dark : assets.download_icon} 
+                alt='Download icon' 
+                width={20} 
+                height={20} 
+                className='w-4 h-4 sm:w-5 sm:h-5'
+                aria-hidden="true"
+              />
+            </motion.div>
+          </motion.a>
+        </motion.div>
 
-        {/* Social links with better hover states */}
-        <div className='flex gap-4 sm:gap-5 md:gap-6 justify-center'>
+        {/* Social links */}
+        <motion.div 
+          variants={containerVariants}
+          className='flex gap-4 sm:gap-5 md:gap-6 justify-center'
+        >
           {[
             { 
               name: 'GitHub',
@@ -95,69 +193,40 @@ function Header({ isDarkMode }) {
               )
             }
           ].map((social, index) => (
-            <a
+            <motion.a
               key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.1, backgroundColor: isDarkMode ? 'rgba(55, 65, 81, 0.5)' : 'rgba(229, 231, 235, 0.5)' }}
+              whileTap={{ scale: 0.9 }}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 sm:p-2.5 rounded-full ${isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-700/50' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-200/50'} transition-all duration-300`}
+              className={`p-2 sm:p-2.5 rounded-full ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} transition-all duration-300`}
               aria-label={`Visit my ${social.name} profile`}
             >
               {social.icon}
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Scroll indicator with reduced motion consideration */}
-      <div className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
+      {/* Scroll indicator */}
+      <motion.div 
+        animate={{ 
+          y: [0, 10, 0],
+          transition: { 
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
+        className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2'
+      >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? '#e5e7eb' : '#1f2937'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
         </svg>
-      </div>
-
-      {/* Animation styles moved to global CSS (recommended) */}
-      <style jsx global>{`
-        @keyframes wave {
-          0% { transform: rotate(0deg); }
-          10% { transform: rotate(-10deg); }
-          20% { transform: rotate(12deg); }
-          30% { transform: rotate(-10deg); }
-          40% { transform: rotate(9deg); }
-          50% { transform: rotate(0deg); }
-          100% { transform: rotate(0deg); }
-        }
-        .wave-emoji {
-          animation: wave 2s infinite;
-        }
-        @keyframes blink {
-          from, to { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        .typing-cursor {
-          animation: blink 1s step-end infinite;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          50% { transform: translateY(-20px) translateX(20px); }
-        }
-        .animate-float {
-          animation: float 8s ease-in-out infinite;
-        }
-        .animate-float-delay {
-          animation: float 8s ease-in-out infinite 2s;
-        }
-        @media (prefers-reduced-motion) {
-          .wave-emoji,
-          .typing-cursor,
-          .animate-float,
-          .animate-float-delay,
-          .animate-bounce {
-            animation: none !important;
-          }
-        }
-      `}</style>
-    </header>
+      </motion.div>
+    </motion.header>
   )
 }
 
