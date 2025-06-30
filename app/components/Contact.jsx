@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 function Contact({ isDarkMode }) {
   const [result, setResult] = useState("");
@@ -48,52 +49,126 @@ function Contact({ isDarkMode }) {
     }
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const floatVariants = {
+    float: {
+      y: [0, -20, 0],
+      x: [0, 20, 0],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    floatDelayed: {
+      y: [0, -20, 0],
+      x: [0, 20, 0],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2
+      }
+    }
+  }
+
   return (
-    <section 
+    <motion.section 
       id="contact" 
-      className={`w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className={`w-full px-4 sm:px-6 lg:px-8 py-10 md:py-14 lg:py-14 flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="contact-heading"
     >
-      {/* Animated background elements - improved performance */}
+      {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden -z-10 pointer-events-none'>
-        <div className={`absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full ${
-          isDarkMode ? 'bg-purple-500/10' : 'bg-purple-300/20'
-        } blur-3xl animate-float`}></div>
-        <div className={`absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full ${
-          isDarkMode ? 'bg-blue-500/10' : 'bg-blue-300/20'
-        } blur-3xl animate-float-delay`}></div>
+        <motion.div 
+          variants={floatVariants}
+          animate="float"
+          className={`absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full ${
+            isDarkMode ? 'bg-purple-500/10' : 'bg-purple-300/20'
+          } blur-3xl`}
+        />
+        <motion.div 
+          variants={floatVariants}
+          animate="floatDelayed"
+          className={`absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full ${
+            isDarkMode ? 'bg-blue-500/10' : 'bg-blue-300/20'
+          } blur-3xl`}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
-          isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/95 border border-gray-200'
-        } shadow-lg`}>
+        <motion.div 
+          variants={itemVariants}
+          className={`flex flex-col lg:flex-row rounded-xl overflow-hidden ${
+            isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/95 border border-gray-200'
+          } shadow-lg`}
+        >
           {/* Left Section - Contact Info */}
           <div className="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-            <h4 className={`mb-3 text-sm sm:text-base font-semibold ${
-              isDarkMode ? 'text-purple-400' : 'text-purple-600'
-            }`}>
+            <motion.h4 
+              variants={itemVariants}
+              className={`mb-3 text-sm sm:text-base font-semibold ${
+                isDarkMode ? 'text-purple-400' : 'text-purple-600'
+              }`}
+            >
               Let's Connect
-            </h4>
-            <h2 
+            </motion.h4>
+            <motion.h2 
+              variants={itemVariants}
               id="contact-heading"
               className={`text-2xl sm:text-2xl md:text3xl font-bold mb-4 ${
                 isDarkMode ? 'text-white' : 'text-gray-900'
               }`}
             >
               Get in <span className={`bg-gradient-to-r ${isDarkMode ? 'from-blue-400 to-purple-400' : 'from-blue-600 to-purple-600'} bg-clip-text text-transparent`}>Touch</span>
-            </h2>
-            <p className={`text-sm sm:text-base ${
-              isDarkMode ? 'text-gray-300' : 'text-gray-600'
-            } mb-6 md:mb-8`}>
+            </motion.h2>
+            <motion.p 
+              variants={itemVariants}
+              className={`text-sm sm:text-base ${
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
+              } mb-6 md:mb-8`}
+            >
               Have a question, idea, or just want to say Hi! I'm always open to new opportunities and tech conversations.
-            </p>
+            </motion.p>
             
             {/* Contact Info */}
-            <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-center">
+            <motion.div 
+              variants={containerVariants}
+              className="space-y-3 sm:space-y-4"
+            >
+              <motion.div 
+                variants={itemVariants}
+                whileHover={{ x: 5 }}
+                className="flex items-center"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 mr-3 ${
                   isDarkMode ? 'text-purple-400' : 'text-purple-600'
                 }`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -108,20 +183,29 @@ function Contact({ isDarkMode }) {
                 >
                   thallasaikalyan@gmail.com
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Vertical Divider - Hidden on mobile */}
-          <div className={`hidden lg:block w-px ${
-            isDarkMode ? 'bg-gray-700' : 'bg-gray-200'
-          }`} aria-hidden="true"></div>
+          <motion.div 
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ delay: 0.4 }}
+            className={`hidden lg:block w-px ${
+              isDarkMode ? 'bg-gray-700' : 'bg-gray-200'
+            }`} 
+            aria-hidden="true"
+          />
 
           {/* Right Section - Form */}
-          <div className="lg:w-3/5 p-6 sm:p-8 lg:p-10">
+          <motion.div 
+            variants={containerVariants}
+            className="lg:w-3/5 p-6 sm:p-8 lg:p-10"
+          >
             <form onSubmit={onSubmit}>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-5'>
-                <div>
+                <motion.div variants={itemVariants}>
                   <label 
                     htmlFor="name"
                     className={`block text-sm font-medium mb-2 ${
@@ -130,7 +214,8 @@ function Contact({ isDarkMode }) {
                   >
                     Name
                   </label>
-                  <input 
+                  <motion.input 
+                    whileFocus={{ scale: 1.01 }}
                     id="name"
                     type='text'
                     required 
@@ -142,8 +227,8 @@ function Contact({ isDarkMode }) {
                     name='Name'
                     aria-required="true"
                   />
-                </div>
-                <div>
+                </motion.div>
+                <motion.div variants={itemVariants}>
                   <label 
                     htmlFor="email"
                     className={`block text-sm font-medium mb-2 ${
@@ -152,7 +237,8 @@ function Contact({ isDarkMode }) {
                   >
                     Email
                   </label>
-                  <input 
+                  <motion.input 
+                    whileFocus={{ scale: 1.01 }}
                     id="email"
                     type='email' 
                     required 
@@ -164,10 +250,10 @@ function Contact({ isDarkMode }) {
                     name='E-mail'
                     aria-required="true"
                   />
-                </div>
+                </motion.div>
               </div>
               
-              <div className='mb-5'>
+              <motion.div variants={itemVariants} className='mb-5'>
                 <label 
                   htmlFor="message"
                   className={`block text-sm font-medium mb-2 ${
@@ -176,7 +262,8 @@ function Contact({ isDarkMode }) {
                 >
                   Message
                 </label>
-                <textarea
+                <motion.textarea
+                  whileFocus={{ scale: 1.01 }}
                   id="message"
                   rows='4'
                   className={`w-full px-4 py-3 text-sm sm:text-base outline-none border rounded-lg transition-all resize-none ${
@@ -188,16 +275,18 @@ function Contact({ isDarkMode }) {
                   name='Message'
                   onChange={handleMessageChange}
                   aria-required="true"
-                ></textarea>
+                ></motion.textarea>
                 <div className={`text-xs sm:text-sm mt-2 text-right ${
                   isDarkMode ? 'text-gray-400' : 'text-gray-500'
                 }`}>
                   <span>{wordCount}</span>/120 words
                 </div>
-              </div>
+              </motion.div>
               
               {result && (
-                <p 
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
                   className={`mb-4 text-center text-sm sm:text-base ${
                     result.includes("success") 
                       ? 'text-green-500' 
@@ -209,18 +298,20 @@ function Contact({ isDarkMode }) {
                   aria-live="polite"
                 >
                   {result}
-                </p>
+                </motion.p>
               )}
 
-              <div className="text-center">
-                <button 
+              <motion.div variants={itemVariants} className="text-center">
+                <motion.button 
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                   type='submit' 
                   disabled={isSubmitting}
                   className={`px-8 py-3 sm:px-10 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-all duration-300 flex items-center justify-center gap-2 mx-auto ${
                     isDarkMode 
                       ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-lg hover:shadow-purple-500/30' 
                       : 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-purple-600/30'
-                  } ${isSubmitting ? 'opacity-80 cursor-not-allowed' : 'hover:scale-105'}`}
+                  } ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
                   aria-disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -240,33 +331,13 @@ function Contact({ isDarkMode }) {
                       </svg>
                     </>
                   )}
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-
-      {/* Animation styles with reduced motion support */}
-      <style jsx global>{`
-        .animate-float {
-          animation: float 8s ease-in-out infinite;
-        }
-        .animate-float-delay {
-          animation: float 8s ease-in-out infinite 2s;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          50% { transform: translateY(-20px) translateX(20px); }
-        }
-        @media (prefers-reduced-motion) {
-          .animate-float,
-          .animate-float-delay {
-            animation: none !important;
-          }
-        }
-      `}</style>
-    </section>
+    </motion.section>
   )
 }
 
