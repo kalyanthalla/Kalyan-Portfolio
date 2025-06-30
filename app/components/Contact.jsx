@@ -101,7 +101,7 @@ function Contact({ isDarkMode }) {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`w-full px-4 sm:px-6 lg:px-8 py-10 md:py-14 lg:py-14 flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 pt-18 sm:px-6 pt-8 lg:px-8 py-10 md:py-14 lg:py-14 flex items-center justify-center min-h-[calc(100vh-80px)] scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="contact-heading"
@@ -208,7 +208,7 @@ function Contact({ isDarkMode }) {
                 <motion.div variants={itemVariants}>
                   <label 
                     htmlFor="name"
-                    className={`block text-sm font-medium mb-2 ${
+                    className={`block text-xs md:text-sm font-medium mb-2 ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
                     }`}
                   >
@@ -231,7 +231,7 @@ function Contact({ isDarkMode }) {
                 <motion.div variants={itemVariants}>
                   <label 
                     htmlFor="email"
-                    className={`block text-sm font-medium mb-2 ${
+                    className={`block text-xs md:text-sm font-medium mb-2 ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
                     }`}
                   >
@@ -256,7 +256,7 @@ function Contact({ isDarkMode }) {
               <motion.div variants={itemVariants} className='mb-5'>
                 <label 
                   htmlFor="message"
-                  className={`block text-sm font-medium mb-2 ${
+                  className={`block text-xs md:text-sm font-medium mb-2 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}
                 >

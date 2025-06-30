@@ -105,7 +105,7 @@ const Work = ({ isDarkMode }) => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`w-full px-4 sm:px-6 lg:px-8 pt-12 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
+      className={`w-full px-4 pt-2 sm:px-6 pt-20 lg:px-8 pt-12 md:pt-24 pb-16 min-h-screen flex items-center scroll-mt-20 transition-colors duration-300 relative overflow-hidden ${
         isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'
       }`}
       aria-labelledby="work-heading"
