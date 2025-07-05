@@ -18,7 +18,7 @@ function Header({ isDarkMode }) {
         {/* Greeting */}
         <h3 className={`flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${isDarkMode ? 'text-gray-100' : 'text-gray-900'}`}>
           Hello, I'm <span className={`${isDarkMode ? 'text-purple-400' : 'text-purple-600'} font-semibold`}>Thalla Sai Kalyan</span>
-          <span className="inline-block" role="img" aria-label="wave">👋</span>
+          <span className="inline-block wave-hand" role="img" aria-label="wave">👋</span>
         </h3>
 
         {/* Main headline */}
@@ -26,7 +26,7 @@ function Header({ isDarkMode }) {
           <span className={`bg-gradient-to-r ${isDarkMode ? 'from-blue-400 via-purple-400 to-purple-500' : 'from-blue-600 via-purple-600 to-purple-700'} bg-clip-text text-transparent`}>
             Full-Stack Developer
           </span>
-          <span className='ml-1'>_</span>
+          <span className='ml-1 blinking-cursor'>_</span>
         </h1>
 
         {/* Description */}
@@ -103,11 +103,49 @@ function Header({ isDarkMode }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2'>
+      <div className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 bounce-arrow'>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? '#e5e7eb' : '#1f2937'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
         </svg>
       </div>
+
+      {/* Add these styles to your global CSS file */}
+      <style jsx>{`
+        .blinking-cursor {
+          animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        
+        .bounce-arrow {
+          animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0) translateX(-50%); }
+          50% { transform: translateY(10px) translateX(-50%); }
+        }
+        
+        .wave-hand {
+          animation: wave 1.5s infinite;
+          transform-origin: 70% 70%;
+          display: inline-block;
+        }
+        
+        @keyframes wave {
+          0% { transform: rotate(0deg); }
+          10% { transform: rotate(14deg); }
+          20% { transform: rotate(-8deg); }
+          30% { transform: rotate(14deg); }
+          40% { transform: rotate(-4deg); }
+          50% { transform: rotate(10deg); }
+          60% { transform: rotate(0deg); }
+          100% { transform: rotate(0deg); }
+        }
+      `}</style>
     </header>
   )
 }
