@@ -1,69 +1,29 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 
 const Footer = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear();
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  }
-
   return (
-    <motion.footer 
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+    <footer 
       className={`${isDarkMode ? 'bg-gray-900 text-gray-300' : 'bg-gray-50 text-gray-600'} transition-colors duration-300 py-6 sm:py-8`}
       aria-labelledby="footer-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          variants={containerVariants}
-          className="flex flex-col md:flex-row items-center justify-between gap-4"
-        >
-          <motion.div 
-            variants={itemVariants}
-            className="text-center md:text-left"
-          >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-center md:text-left">
             <h2 id="footer-heading" className="sr-only">Footer</h2>
             <p className="text-sm sm:text-base">
               © {currentYear} Thalla Sai Kalyan. All rights reserved.
             </p>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            variants={containerVariants}
-            className="flex gap-4 sm:gap-6"
-          >
+          <div className="flex gap-4 sm:gap-6">
             {/* GitHub */}
-            <motion.a 
-              variants={itemVariants}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <a 
               href="https://github.com/kalyanthalla" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full transition-transform hover:scale-110 active:scale-95 ${
                 isDarkMode 
                   ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
@@ -82,17 +42,14 @@ const Footer = ({ isDarkMode }) => {
                   clipRule="evenodd" 
                 />
               </svg>
-            </motion.a>
+            </a>
             
             {/* LinkedIn */}
-            <motion.a 
-              variants={itemVariants}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <a 
               href="https://www.linkedin.com/in/kalyan-thalla" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full transition-transform hover:scale-110 active:scale-95 ${
                 isDarkMode 
                   ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
@@ -107,11 +64,11 @@ const Footer = ({ isDarkMode }) => {
               >
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
-            </motion.a>
-          </motion.div>
-        </motion.div>
+            </a>
+          </div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   )
 }
 
