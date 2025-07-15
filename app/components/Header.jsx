@@ -103,11 +103,13 @@ function Header({ isDarkMode }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className='absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 bounce-arrow'>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? '#e5e7eb' : '#1f2937'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M12 5v14M19 12l-7 7-7-7"/>
-        </svg>
-      </div>
+      <div className='absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2'>
+  <div className='bounce-arrow'>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? '#e5e7eb' : '#1f2937'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
+  </div>
+</div>
 
       {/* Add these styles to your global CSS file */}
       <style jsx>{`
@@ -121,13 +123,13 @@ function Header({ isDarkMode }) {
         }
         
         .bounce-arrow {
-          animation: bounce 1.5s infinite;
-        }
-        
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0) translateX(-50%); }
-          50% { transform: translateY(10px) translateX(-50%); }
-        }
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
         
         .wave-hand {
           animation: wave 1.5s infinite;

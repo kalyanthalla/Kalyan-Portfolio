@@ -67,12 +67,12 @@ export const workData = [
         techStack: ["HTML5", "CSS3", "JavaScript"],
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-        link: "#",
-        github: "#",
-        techStack: ["React", "Next.js", "Tailwind CSS", "Node.js"],
+        title: 'Green Thumb Haven',
+        description: 'Houseplants Ecommerce Webpage',
+        bgImage: '/greenthumhaven.png',
+        link: "https://greenthumbhaven.netlify.app/",
+        github: "https://github.com/kalyanthalla/GreenThumbHaven.git",
+        techStack: ["React", "Redux", "Vite"],
     },
     {
         title: 'Photography site',
