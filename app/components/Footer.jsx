@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Footer = ({ isDarkMode }) => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer 
-      className={`${isDarkMode ? 'bg-gray-900 text-gray-300' : 'bg-gray-50 text-gray-600'} transition-colors duration-300 py-6 sm:py-8`}
+      className="bg-gray-900 text-white py-6 sm:py-8"
       aria-labelledby="footer-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,11 +23,7 @@ const Footer = ({ isDarkMode }) => {
               href="https://github.com/kalyanthalla" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-transform hover:scale-110 active:scale-95 ${
-                isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-              }`}
+              className="p-2 rounded-full transition-transform hover:scale-110 active:scale-95 text-white hover:text-gray-900 hover:bg-gray-200"
               aria-label="Visit my GitHub profile"
             >
               <svg 
@@ -49,11 +45,7 @@ const Footer = ({ isDarkMode }) => {
               href="https://www.linkedin.com/in/kalyan-thalla" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-transform hover:scale-110 active:scale-95 ${
-                isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-gray-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-              }`}
+              className="p-2 rounded-full transition-transform hover:scale-110 active:scale-95 text-white hover:text-gray-900 hover:bg-gray-200"
               aria-label="Visit my LinkedIn profile"
             >
               <svg 

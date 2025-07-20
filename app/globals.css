@@ -1,26 +1,18 @@
 @import "tailwindcss";
 
+:root {
+  --background: #ffffff;
+}
 
-* {
-  font-family: 'Noto Sans', sans-serif;
+body {
+  background: var(--background);
+  font-family: var(--font-noto-sans);
 }
 
 .poppins {
-  font-family: 'Poppins', serif;
-}
-
-.dark .darkTheme {
-  background-color: #0e131e;
-}
-
-.dark .whiteText{
-  color: #E5E5E5;
+  font-family: var(--font-poppins), sans-serif;
 }
 
 .shadow-black {
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.shadow-white {
-  box-shadow: -10px 0 10px rgba(255, 255, 255, 0.1);
 }
