@@ -112,20 +112,20 @@ export default function Navbar() {
           </ul>
           
           {/* Mobile Menu Button */}
-          <button 
-            className='p-2 md:hidden rounded-md hover:bg-gray-100 transition-colors'
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-          >
-            <Image 
-              src={isMenuOpen ? assets.close_icon : assets.menu_icon} 
-              alt={isMenuOpen ? "Close menu" : "Open menu"} 
-              width={24} 
-              height={24} 
-              className="w-7 h-7"
-            />
-          </button>
+<button 
+  className='p-2 md:hidden rounded-md transition-transform hover:scale-110 active:scale-95'
+  onClick={toggleMenu}
+  aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+  aria-expanded={isMenuOpen}
+>
+  <Image 
+    src={isMenuOpen ? assets.close_icon : assets.menu_icon} 
+    alt={isMenuOpen ? "Close menu" : "Open menu"} 
+    width={24} 
+    height={24} 
+    className="w-8 h-8 transition-transform duration-200"
+  />
+</button>
         </div>
         
         {/* Mobile Side Menu */}
@@ -137,18 +137,18 @@ export default function Navbar() {
           {/* Close button at top right */}
           <div className="absolute top-4 right-4">
             <button 
-              onClick={toggleMenu}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-              aria-label="Close menu"
-            >
-              <Image 
-                src={assets.close_icon} 
-                alt="Close menu" 
-                width={24} 
-                height={24} 
-                className="w-6 h-6"
-              />
-            </button>
+  onClick={toggleMenu}
+  className="p-2 rounded-full transition-transform hover:scale-110 active:scale-95"
+  aria-label="Close menu"
+>
+  <Image 
+    src={assets.close_icon} 
+    alt="Close menu" 
+    width={24} 
+    height={24} 
+    className="w-7 h-7 transition-transform duration-200"
+  />
+</button>
           </div>
 
           {/* Profile section */}

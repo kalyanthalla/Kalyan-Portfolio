@@ -4,12 +4,12 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header id='home' className='min-h-[100vh] md:min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[5%] relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50'>
+    <header id='home' className='min-h-[100vh] md:min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[5%] relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100'>
       {/* Enhanced background elements with subtle animation */}
       <div className='absolute inset-0 overflow-hidden -z-10 pointer-events-none'>
         <div className='absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full bg-blue-500/10 blur-3xl animate-float-slow' />
-        <div className='absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full bg-indigo-500/10 blur-3xl animate-float-medium' />
-        <div className='absolute bottom-1/4 left-1/3 w-40 sm:w-56 md:w-64 h-40 sm:h-56 md:h-64 rounded-full bg-blue-400/10 blur-3xl animate-float-fast' />
+        <div className='absolute top-2/3 right-1/3 w-56 sm:w-80 md:w-96 h-56 sm:h-80 md:h-96 rounded-full bg-blue-300/10 blur-3xl animate-float-medium' />
+        <div className='absolute bottom-1/4 left-1/3 w-40 sm:w-56 md:w-64 h-40 sm:h-56 md:h-64 rounded-full bg-white/20 blur-3xl animate-float-fast' />
         <div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/20' />
       </div>
 
@@ -21,7 +21,7 @@ export default function Header() {
               Hello, I'm <span className="text-blue-800 font-semibold">Thalla Sai Kalyan</span> 👋
             </h2>
             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 font-poppins leading-tight'>
-              Full-Stack <span className='text-blue-600 bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600'>Developer</span>
+              Full-Stack <span className='text-blue-600 bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500'>Developer</span>
               <span className='ml-1 blinking-cursor'>_</span>
             </h1>
             <p className='text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed animate-fade-in-up delay-100'>
@@ -37,7 +37,13 @@ export default function Header() {
               className='px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium font-poppins rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group transform hover:-translate-y-0.5'
             >
               View My Work
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <Image
+                src={assets.arrow_icon} 
+                alt="Arrow" 
+                width={16} 
+                height={16} 
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+              />
             </a>
             <a 
               href="#" 
@@ -49,7 +55,7 @@ export default function Header() {
                 alt="Download" 
                 width={16} 
                 height={16} 
-                className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+                className="w-6 h-6 transition-transform duration-300 group-hover:translate-y-1"
               />
             </a>
           </div>
@@ -84,10 +90,10 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Enhanced Profile Image with better animations */}
+        {/* Enhanced Profile Image with blue/white animations */}
         <div className='relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 hidden md:flex items-center justify-center group'>
-          {/* Animated gradient border */}
-          <div className="absolute inset-0 rounded-full p-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 animate-gradient-xy overflow-hidden">
+          {/* Blue/white gradient border */}
+          <div className="absolute inset-0 rounded-full p-1.5 bg-gradient-to-r from-blue-500 to-blue-300 animate-gradient-xy overflow-hidden">
             <div className="relative w-full h-full rounded-full overflow-hidden bg-white/90 backdrop-blur-sm p-1">
               <div className="w-full h-full rounded-full overflow-hidden relative">
                 <Image 
@@ -105,18 +111,18 @@ export default function Header() {
           
           {/* Floating dots decoration */}
           <div className="absolute -top-4 -left-4 w-3 h-3 rounded-full bg-blue-400/80 animate-float-slow" />
-          <div className="absolute -bottom-2 -right-4 w-4 h-4 rounded-full bg-indigo-400/80 animate-float-medium" />
-          <div className="absolute top-8 -right-8 w-2 h-2 rounded-full bg-purple-400/80 animate-float-fast" />
+          <div className="absolute -bottom-2 -right-4 w-4 h-4 rounded-full bg-blue-300/80 animate-float-medium" />
+          <div className="absolute top-8 -right-8 w-2 h-2 rounded-full bg-white/80 animate-float-fast" />
           
-          {/* Glow effect */}
-          <div className="absolute -inset-4 rounded-full bg-blue-500/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+          {/* Blue glow effect */}
+          <div className="absolute -inset-4 rounded-full bg-blue-400/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
         </div>
       </div>
 
       {/* Scroll indicator with improved animation */}
       <div className='absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 animate-fade-in-up delay-500'>
         <a href="#about" className='flex flex-col items-center group' aria-label="Scroll down">
-          <span className='text-sm text-gray-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity'>Explore</span>
+          <span className='text-sm text-gray-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity'>Scroll down</span>
           <div className='bounce-arrow text-gray-700 group-hover:text-blue-600 transition-colors'>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 5v14M19 12l-7 7-7-7"/>
@@ -164,6 +170,14 @@ export default function Header() {
         .animate-gradient-xy {
           background-size: 300% 300%;
           animation: gradient-xy 8s ease infinite;
+          background-image: linear-gradient(
+            45deg,
+            #3b82f6,  /* blue-500 */
+            #93c5fd,  /* blue-300 */
+            #ffffff,  /* white */
+            #93c5fd,  /* blue-300 */
+            #3b82f6   /* blue-500 */
+          );
         }
 
         .animate-float-slow {
