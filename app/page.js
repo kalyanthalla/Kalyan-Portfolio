@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
+import ProgressFloatingBar from "./components/ProgressFloatingBar";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Work />
       <Contact />
       <Footer />
+      <ProgressFloatingBar />
     </>
   );
 }
